@@ -1,0 +1,77 @@
+section.aboutUs
+{
+    display: flex;
+    flex-direction: row;
+    height: 550px;
+    width: 100%;
+    div.text_block
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 50%;
+        padding: 0 55px;
+        background: var(--primary-color);
+        color: var(--white-color);
+        h1 
+        {
+            margin: 0 0 10px;
+            font-size: 40px;
+            font-weight: 300;
+        }
+        h4 
+        {
+            color: var(--b3-gray-color);
+            text-transform: uppercase;
+            font-style: italic;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        article
+        {
+            margin-top: 30px;
+            text-align: justify;
+            font-weight: 300;
+            font-size: 20px;
+        }
+        a 
+        {
+            display: block;
+            margin: 30px auto 0;
+            padding: 10px 15px;
+            background: var(--f5-white-color);
+            color: var(--black-color);
+            font-size: 20px;
+            font-weight: 400;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: linear 0.1s;
+            &:hover
+            {
+                transform: scale(1.1);
+                box-shadow:#888 0px 5px 10px;
+            }
+        }
+    }
+    div.image_block
+    {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        div
+        {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: var(--primary-color);
+            opacity: 0.5;
+        }
+        img 
+        {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
