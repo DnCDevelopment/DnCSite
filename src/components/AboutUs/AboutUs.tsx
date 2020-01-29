@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { IMainAbout } from '../../Types/CommonTypes';
-
+import Arrow from '../Controls/Arrow';
+import nextBlock from '../Controls/nextBlockContext';
 import './AboutUs.scss';
 
 const ABOUTUS_QUERY = graphql`
@@ -10,7 +11,7 @@ const ABOUTUS_QUERY = graphql`
       title
       subtitle
       mainPageContent: mainpage_content
-      LinkText: link_text
+      linkText: link_text
       link
       main_page_photo {
         childImageSharp {
@@ -42,18 +43,20 @@ const AboutUs: React.FC = (): JSX.Element => {
   }: IMainAbout = useStaticQuery(ABOUTUS_QUERY);
 
   return (
-    <section className="aboutUs">
-      <div className="text_block">
-        <h1>{title}</h1>
+    <div className="about-us">
+      <div className="text-block">
         <h4>{subtitle}</h4>
+        <h2>{title}</h2>
         <article>{mainPageContent}</article>
         <Link to={link}>{linkText}</Link>
       </div>
-      <div className="image_block">
+      <div className="image-block">
         <div />
         <img src={src} alt={alt} />
       </div>
-    </section>
+      <Link to={link}>{linkText}</Link>
+      <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>
+    </div>
   );
 };
 export default AboutUs;

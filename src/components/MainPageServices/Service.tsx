@@ -1,21 +1,14 @@
 import React from 'react';
-import { IService } from '../../Types/CommonTypes';
-import Arrow from '../../assets/images/illustrations/download-arrow.png';
 import './Service.scss';
+import { IService } from '../../Types/CommonTypes';
 
-const Service = (service: IService): JSX.Element => {
-  const {
-    service: { serviceName, description, svg, serviceSolutions },
-  } = service;
+const Service: React.FC<IService> = ({ serviceName, serviceSolutions }): JSX.Element => {
   return (
     <div className="service-item">
-      <div dangerouslySetInnerHTML={{ __html: svg }} />
       <h3>{serviceName}</h3>
-      <article>{description}</article>
       {serviceSolutions.length > 0 && (
         <>
-          <img src={Arrow} alt="" />
-          <ol>
+          <ol className="service-item-solutions">
             {serviceSolutions.map(({ id, solutionName }) => (
               <li key={id}>{solutionName}</li>
             ))}

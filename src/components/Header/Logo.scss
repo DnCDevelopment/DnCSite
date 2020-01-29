@@ -1,18 +1,26 @@
 .logo-container {
-  height: 50px;
-  width: 80px;
-  padding-top: 10px;
-
+  height: 75px;
+  width: 75px;
+  z-index: 20;
   & img {
     width: 100%;
     height: auto;
   }
 }
 
+@media only screen and (min-height: 660px) {
+  .logo-container 
+  {
+    margin-top: 45px;
+  }
+}
+
+
+
 @media only screen and (min-width: 768px) {
   .logo-container {
+    margin-top: 0;
     min-width: 100px;
     padding-top: 0;
-    margin: auto;
   }
 }

@@ -1,8 +1,5 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-
-import SocialIcons from '../SocialIcons/SocialIcons';
-
 import { IMenu, IMenuData } from '../../Types/CommonTypes';
 import { IMenuProps } from './HeaderTypes';
 
@@ -26,19 +23,19 @@ const Menu: React.FC<IMenuProps> = ({ isMenuOpen, menuOpen }): JSX.Element => {
   return (
     <div className={`header-menu header-menu-${isMenuOpen ? 'open' : 'close'}`}>
       <div className="close-icon" onClick={menuOpen} />
+      <h2>MENU</h2>
       <nav className="menu">
         <ul className="header-menu-list">
           {menu.map(
             ({ link, title }: IMenu): JSX.Element => (
               <li onClick={isMenuOpen ? menuOpen : undefined} key={link}>
                 <Link className="header-menu-link" to={link}>
-                  {title}
+                  {title.toUpperCase()}
                 </Link>
               </li>
             )
           )}
         </ul>
-        <SocialIcons />
       </nav>
     </div>
   );

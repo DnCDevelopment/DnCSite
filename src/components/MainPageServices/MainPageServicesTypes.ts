@@ -1,10 +1,21 @@
-import { IService } from '../../Types/CommonTypes';
+import { IService, ITechnology } from '../../Types/CommonTypes';
 
-export default interface IMainPageServices {
+export interface IMainPageServices {
   allStrapiServices: {
-    services: IService[];
+    services: { service: IService }[];
   };
   block: {
     title: string;
   };
+}
+
+export interface IMainPageTechologies {
+  allStrapiTechnology: { technologies: { technology: ITechnology[] } };
+}
+
+export interface INukaControls {
+  nextSlide: () => void;
+  previousSlide: () => void;
+  currentSlide: number;
+  slideCount: number;
 }

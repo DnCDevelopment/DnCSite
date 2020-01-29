@@ -5,6 +5,7 @@
   --black-color: #000;
   --f5-white-color: #f5f5f5;
   --b3-gray-color: #b3b3b3;
+  --primary-black-color:#121212;
 
 
   //containers
@@ -12,7 +13,8 @@
   --small-container: 1140px;
 
   // Font-family
-  --font-family: 'Montserrat', sans-serif;
+  --font-family: 'Roboto Condensed', sans-serif;
+  --font-open-sans: 'Open Sans', sans-serif;
 
   // Font-sizes
   --small-font: 12px;
@@ -82,12 +84,48 @@ button {
   position: fixed;
 }
 
+section 
+{
+  min-height: 100vh;
+}
+
+img.arrow
+{
+  margin: 0 auto;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  object-fit: contain;
+}
+@media only screen and (min-height:600px)
+{
+  img.arrow 
+  {
+    height: 50px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width:768px)
+{
+  img.arrow 
+  {
+    display: none;
+  }
+}
+
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
 h3 {
   font-size: var(--big-font);
+}
+
+.section
+{
+  position: relative;
 }
 
 .post-btn {

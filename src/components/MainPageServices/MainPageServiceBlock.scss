@@ -1,0 +1,28 @@
+div.mainpage-service-block
+{
+    padding: 125px 20px 0;
+    .arrow 
+    {
+        height: 20px;
+        width: 10px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        transform: rotate(90deg);
+    }
+}
+@media only screen and (min-height:660px)
+{
+    div.mainpage-service-block
+    {
+        padding: 180px 25px 0;
+    }
+}
+
+@media only screen and (min-height:700px)
+{
+    div.mainpage-service-block
+    {
+        padding: 190px 50px 0;
+    }
+}

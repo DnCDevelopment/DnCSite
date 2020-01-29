@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 
-import Button from '../Button/Button';
 import Logo from './Logo';
 import Menu from './Menu';
 import OpenBtn from './OpenBtn';
@@ -17,16 +16,10 @@ const Header: React.FC = (): JSX.Element => {
 
   return (
     <header>
-      <div className="header-container">
-        <div className="header-left-side">
-          <OpenBtn menuOpen={menuOpen} />
-          <Logo />
-          <Menu isMenuOpen={isMenuOpen} menuOpen={menuOpen} />
-        </div>
-        <div className="header-right-side">
-          <Button />
-        </div>
-      </div>
+      <OpenBtn menuOpen={menuOpen} />
+      <Logo />
+      <div className="placeholder-div" />
+      <Menu isMenuOpen={isMenuOpen} menuOpen={menuOpen} />
     </header>
   );
 };

@@ -23,13 +23,23 @@ export interface IServiceSolution {
 }
 
 export interface IService {
-  service: {
+  id?: number | string;
+  serviceName: string;
+  svg?: string;
+  description?: string;
+  serviceSolutions: IServiceSolution[];
+}
+
+export interface ITechnology {
+  technology: {
     id: number | string;
-    serviceName: string;
+    name: string;
     svg: string;
-    description: string;
-    serviceSolutions: IServiceSolution[];
   };
+}
+
+export interface ITechnologiesData {
+  technologies: ITechnology[];
 }
 
 export interface IMainAbout {

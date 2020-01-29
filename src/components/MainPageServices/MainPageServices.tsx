@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import IMainPageServices from './MainPageServicesTypes';
+import { IMainPageServices } from './MainPageServicesTypes';
 import Service from './Service';
 import './MainPageServices.scss';
 
@@ -9,11 +9,8 @@ const SERVICEQUERY = graphql`
     allStrapiServices(filter: { mainpageservice: { id: { eq: 1 } } }) {
       services: edges {
         service: node {
-          strapiId
-          id
-          svg
+          strapiId: id
           serviceName: name
-          description
           serviceSolutions: servicesolutions {
             id
             solutionName: name
@@ -33,16 +30,13 @@ const MainPageServices: React.FC = (): JSX.Element => {
     block: { title },
   }: IMainPageServices = useStaticQuery(SERVICEQUERY);
   return (
-    <section className="main-services">
-      <div>
-        <h2>{title}</h2>
-        <div>
-          {services.map(({ service }) => (
-            <Service key={service.id} service={service} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="mainpage-sevices">
+      <h2>{title}</h2>
+      {services.length > 0 &&
+        services.map(({ service: { id, serviceName, serviceSolutions } }) => (
+          <Service key={`${id}_${serviceName}`} serviceName={serviceName} serviceSolutions={serviceSolutions} />
+        ))}
+    </div>
   );
 };
 
