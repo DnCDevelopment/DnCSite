@@ -30,7 +30,7 @@ const Menu: React.FC<IMenuProps> = ({ isMenuOpen, menuOpen }): JSX.Element => {
             ({ link, title }: IMenu): JSX.Element => (
               <li onClick={isMenuOpen ? menuOpen : undefined} key={link}>
                 <Link className="header-menu-link" to={link}>
-                  {title.toUpperCase()}
+                  {title}
                 </Link>
               </li>
             )

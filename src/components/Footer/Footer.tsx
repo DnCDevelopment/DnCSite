@@ -15,7 +15,9 @@ const Footer: React.FC = (): JSX.Element => {
         </h6>
       </div>
       <div>
-        <Link to="/portfolio">Портфолило</Link>
+        <Link className="portfolio-link" to="/portfolio">
+          Портфолило
+        </Link>
       </div>
     </footer>
   );

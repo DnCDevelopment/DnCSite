@@ -51,7 +51,6 @@ const AboutUs: React.FC = (): JSX.Element => {
         <Link to={link}>{linkText}</Link>
       </div>
       <div className="image-block">
-        <div />
         <img src={src} alt={alt} />
       </div>
       <Link to={link}>{linkText}</Link>

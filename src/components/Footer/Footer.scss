@@ -3,7 +3,7 @@ footer
     display: none;
 }
 @media only screen and (min-width: 768px) {
-    footer 
+    .footer 
     {
         position: fixed;
         bottom: 0;
@@ -25,7 +25,7 @@ footer
                 color:var(--primary-black-color)
             }
         }
-        a 
+        .portfolio-link
         {
             color: var(--white-color);
             font-style: normal;
