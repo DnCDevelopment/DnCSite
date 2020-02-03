@@ -88,8 +88,10 @@ section
   min-height: 100vh;
 }
 
-img.arrow
+div.arrow
 {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   height: 40px;
   width: 100%;
@@ -100,7 +102,7 @@ img.arrow
 }
 @media only screen and (min-height:600px)
 {
-  img.arrow 
+  div.arrow 
   {
     height: 50px;
     bottom: 20px;
@@ -108,7 +110,7 @@ img.arrow
 }
 @media only screen and (min-width:768px)
 {
-  img.arrow 
+  div.arrow 
   {
     display: none;
   }
