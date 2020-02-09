@@ -1,6 +1,6 @@
 import React from 'react';
 import { INukaSlideControls } from './ControlsTypes';
-import ArrowSVG from '../../assets/images/illustrations/arrow-small.svg';
+import ArrowSVG from '../../assets/images/illustrations/arrow-small.inline.svg';
 
 const NukaSlideControls: React.FC<INukaSlideControls> = ({ changeSlide, disabledOn, additionalClass }): JSX.Element => {
   return (

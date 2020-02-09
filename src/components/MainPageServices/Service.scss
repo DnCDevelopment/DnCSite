@@ -1,54 +1,228 @@
-div.service-item
-{
-    color:var(--primary-black-color);
-    h3 
-    {
-        margin-bottom: 10px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-    }
+.service-item {
+	color: var(--primary-black-color);
+	h3 {
+		margin-bottom: 10px;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+	}
 
-    ol
-    {
-        margin-bottom: 10px;
-        list-style-type: none;
-        li 
-        {
-            display: flex;
-            align-items: center;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 15px;
-            line-height: 20px;
-            &::before
-            {
-                content: '';
-                width: 20px;
-                height: 1px;
-                display: block;
-                background-color: var(--primary-black-color);
-                margin-right: 10px;
-            }
-        }
-    }
+	ol {
+		margin-bottom: 10px;
+		list-style-type: none;
+		li {
+			display: flex;
+			align-items: center;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 15px;
+			line-height: 20px;
+			&::before {
+				content: '';
+				width: 20px;
+				height: 1px;
+				display: block;
+				background-color: var(--primary-black-color);
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&-number {
+		display: none;
+	}
 }
 
-@media only screen and (min-height:700px)
+@media only screen and (min-height: 700px) {
+	.service-item {
+		color: var(--primary-black-color);
+		h3 {
+			margin-bottom: 20px;
+			font-size: 20px;
+		}
+		ol {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media only screen and (min-height: 760px) {
+	.service-item ol li 
+	{
+		margin-bottom: 5px;
+	}
+}
+
+
+@media only screen and (min-width: 768px) {
+	.service-item {
+		position: relative;
+
+		padding-bottom: 15px;
+		margin-right: 42px; /*Даня иди нахуй*/
+		h3 {
+			margin-bottom: 30px;
+			font-size: 30px;
+			line-height: 25px;
+			white-space: nowrap;
+		}
+		ol {
+            padding-bottom: 30px;
+			li {
+				font-size: 15px;
+				&::before {
+					content: none;
+				}
+			}
+		}
+
+		&-number {
+			position: absolute;
+			bottom: 0;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 30px;
+			transform: rotate(-90deg);
+
+			&::before {
+				content: "";
+
+				height: 15px;
+				width: 1px;
+				margin-bottom: 10px;
+
+				background-color: var(--black-color);
+			}
+		}
+	}
+}
+
+@media only screen and (min-height: 1023px) {
+	.service-item {
+		color: var(--primary-black-color);
+		h3 {
+			margin-bottom: 20px;
+			font-size: 25px;
+		}
+		ol {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1367px) {
+    .service-item {
+		padding-bottom: 20px;
+		margin-right: 75px;
+		h3 {
+			font-size: 35px;
+		}
+		ol {
+            padding-bottom: 30px;
+			li {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+    .service-item {
+		margin-right: 100px;
+	}
+}
+
+@media only screen and (min-height: 900px) 
 {
-    div.service-item
-    {
-        color:var(--primary-black-color);
-        h3 
-        {
-            margin-bottom: 20px;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        ol 
-        {
-            margin-bottom: 20px;
-        }
-    }
+	.service-item
+	{
+		margin-right: 62px; /*Даня иди нахуй по другому не получается*/
+		h3 
+		{
+			font-size: 40px;
+			margin-bottom: 35px;
+		}
+		ol
+		{
+			padding-bottom: 50px;
+			li 
+			{
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+@media only screen and (min-height: 1000px)
+{
+	.service-item
+	{
+		padding-top: 30px;
+		h3 
+		{
+			margin-bottom: 50px;
+		}
+		ol
+		{
+			padding-bottom: 70px;
+			li 
+			{
+				margin-bottom: 15px;
+			}
+		}
+	}
+} 
+
+@media screen and (device-aspect-ratio: 4/3) and (min-width:768px) /* Айпады ебучие */
+{  
+	.service-item 
+	{
+		h3 
+		{
+			font-size: 30px;
+		}
+	}
+}
+
+@media screen and (device-aspect-ratio: 3/4) and (min-width:768px) /* Айпады ебучие */
+{
+	.service-item 
+	{
+		margin-right: 40px;
+		h3 
+		{
+			font-size: 25px;
+		}
+		ol li 
+		{
+			font-size: 15px;
+			line-height: 15px;
+		}
+	}
+}
+
+@media screen and (device-aspect-ratio: 1024/1366) and (min-width:1024px) /* Айпады ебучие */
+{
+	.service-item 
+	{
+		padding-top: 60px;
+		h3 
+		{
+			font-size: 30px;
+		}
+		ol 
+		{
+			li 
+			{
+				margin-bottom: 20px;
+
+				font-size: 20px;
+				line-height: 20px;
+			}
+		}
+	}
 }

@@ -1,28 +1,145 @@
-div.mainpage-service-block
+.mainpage-service-block 
 {
-    padding: 125px 20px 0;
+	height: 100%;
+	padding: 125px 20px 0;
+
+	overflow: hidden;
+	&-header
+	{
+		margin-bottom: 10px;
+        color: var(--primary-black-color);
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+		line-height: 20px;
+		
+		&:first-of-type
+		{
+			display: none;
+		}
+	}
+
     .arrow 
     {
-        height: 20px;
-        width: 10px;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        transform: rotate(90deg);
+		height: 20px;
+		width: 10px;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		transform: rotate(90deg);
+	}
+}
+@media only screen and (min-height: 660px) 
+{
+    .mainpage-service-block 
+    {
+		padding: 180px 25px 0;
+	}
+}
+
+@media only screen and (min-height: 700px) 
+{
+    .mainpage-service-block 
+    {
+		padding: 190px 50px 0;
+	}
+}
+
+@media only screen and (min-width: 768px)
+{
+    .mainpage-service-block
+    {
+		padding: 190px 50px 0;
+
+		background-image: url('../../assets/images/illustrations/mp-service-bg.svg');
+		background-repeat: repeat-y;
+		background-size: 1020px;
+		background-position-x: 50px;
+		
+		&-header
+        {
+            color: var(--black-color);
+            &::before
+            {
+                background: var(--black-color);
+			}
+			
+			&:first-of-type 
+			{
+				display: flex;
+			}
+        }
     }
 }
-@media only screen and (min-height:660px)
+@media only screen and (min-width: 900px)
 {
-    div.mainpage-service-block
+	.mainpage-service-block
     {
-        padding: 180px 25px 0;
+        padding: 200px 90px 0;
+        background-size: 1025px;
+		background-position-x: 125px;
+	}
+}
+
+@media only screen and (min-width: 1100px)
+{
+    .mainpage-service-block
+    {
+		background-position-x: 205px;
+	}
+
+}
+@media only screen and (min-width: 1367px)
+{
+    .mainpage-service-block
+    {
+		padding: 200px 90px 0;
+        background-size: 1295px;
+		
+		&-header
+        {
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
     }
 }
 
-@media only screen and (min-height:700px)
+@media only screen and (min-width: 1500px)
 {
-    div.mainpage-service-block
+    .mainpage-service-block
     {
-        padding: 190px 50px 0;
+        background-position-x: 240px;
+        background-size: 1390px;
+    }
+}
+
+@media screen and (device-aspect-ratio: 1366/1024) and (min-width:1366px) /* Айпады ебучие */
+{
+    .mainpage-service-block
+    {
+        background-size: 1390px;
+    }
+}
+
+
+@media screen and (device-aspect-ratio: 3/4) and (min-width:768px) /* Айпады ебучие */
+{
+    .mainpage-service-block
+    {
+        background-size: 875px;
+    }
+}
+
+@media screen and (device-aspect-ratio: 1024/1366) and (min-width:1024px) /* Айпады ебучие */
+{
+    .mainpage-service-block
+    {
+        background-position-x: 90px;
+        background-size: 1095px;
+        &-header 
+        {
+            font-size: 30px;
+        }
     }
 }

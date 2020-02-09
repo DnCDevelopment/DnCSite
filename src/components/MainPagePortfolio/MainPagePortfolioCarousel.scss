@@ -1,0 +1,19 @@
+.mainpage-portfolio .slider {
+	&-list {
+		height: 100% !important;
+		min-width: 100vw !important;
+		display: flex;
+		justify-content: center;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.mainpage-portfolio .slider {
+		&-list {
+			width: 100vw;
+		}
+        &-slide 
+        {
+            min-width: 400px;
+        }
+	}
+}

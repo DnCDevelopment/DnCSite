@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import MainPageTechnologiesCarousel from './MainPageTechnologiesCarousel';
+import MainPageTechologiesTicker from './MainPageTechologiesTicker';
 import { IMainPageTechologies } from './MainPageServicesTypes';
 import './MainPageTechnologies.scss';
 
@@ -12,6 +13,9 @@ const TECHNOLOGIES_QUERY = graphql`
           id
           technologyName: name
           svg
+          x
+          y
+          viewSize
         }
       }
     }
@@ -27,8 +31,11 @@ const MainPageTechnologies: React.FC = (): JSX.Element => {
 
   return (
     <div className="mainpage-technologies">
-      <h2>ТЕХНОЛОГИИ С КОТОРЫМИ МЫ РАБОТАЕМ</h2>
-      {window.innerWidth < 768 ? <MainPageTechnologiesCarousel technologies={[].concat(technologies)} /> : <div />}
+      {window.innerWidth < 768 ? (
+        <MainPageTechnologiesCarousel technologies={[].concat(technologies)} />
+      ) : (
+        <MainPageTechologiesTicker technologies={[].concat(technologies)} />
+      )}
     </div>
   );
 };
