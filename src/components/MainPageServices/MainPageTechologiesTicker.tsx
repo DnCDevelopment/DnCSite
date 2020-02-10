@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { ITechnologiesData } from '../../Types/CommonTypes';
 import './MainPageTechologiesTicker.scss';
 
-const TickerAnimation: () => void = (): void => {
+const TickerAnimation: () => void = () => {
   Array.prototype.forEach.call(document.getElementsByClassName('techologies-ticker-item'), el => {
     const { style } = el;
     setTimeout(function move() {

@@ -8,9 +8,9 @@
 	&-item,
 	&-item a {
         color: var(--white-color);
+		font-weight: var(--weight-bold);
+		font-size: var(--font-15);
 		font-style: normal;
-		font-weight: bold;
-		font-size: 15px;
         line-height: 20px;
         text-decoration: none;
 	}

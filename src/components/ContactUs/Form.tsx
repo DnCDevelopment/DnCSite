@@ -25,12 +25,6 @@ const Form: React.FC = (): JSX.Element => {
   const [tel, changeTel] = useState('');
   const [mail, changeMail] = useState('');
 
-  const handleInputChange = ({ target: { name: inputName, value } }: React.ChangeEvent<HTMLInputElement>) => {
-    if (inputName === 'name') changeName(value);
-    if (inputName === 'tel') changeTel(value);
-    if (inputName === 'mail') changeMail(value);
-  };
-
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
   };
@@ -44,13 +38,37 @@ const Form: React.FC = (): JSX.Element => {
       </h3>
       <form>
         <div className="contact-us-form-input">
-          <input type="text" name="name" placeholder={namePlaceholder} value={name} onChange={handleInputChange} />
+          <input
+            type="text"
+            name="name"
+            placeholder={namePlaceholder}
+            value={name}
+            onChange={({ target: { value } }) => {
+              changeName(value);
+            }}
+          />
         </div>
         <div className="contact-us-form-input">
-          <input type="tel" name="tel" placeholder={telPlaceholder} value={tel} onChange={handleInputChange} />
+          <input
+            type="tel"
+            name="tel"
+            placeholder={telPlaceholder}
+            value={tel}
+            onChange={({ target: { value } }) => {
+              changeTel(value);
+            }}
+          />
         </div>
         <div className="contact-us-form-input">
-          <input type="email" name="mail" placeholder={mailPlaceholder} value={mail} onChange={handleInputChange} />
+          <input
+            type="email"
+            name="mail"
+            placeholder={mailPlaceholder}
+            value={mail}
+            onChange={({ target: { value } }) => {
+              changeMail(value);
+            }}
+          />
         </div>
         <input type="submit" value={sendTitle} onClick={handleSubmit} />
       </form>

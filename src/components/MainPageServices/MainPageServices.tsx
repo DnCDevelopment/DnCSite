@@ -9,7 +9,7 @@ const SERVICEQUERY = graphql`
     allStrapiServices(filter: { mainpageservice: { id: { eq: 1 } } }) {
       services: edges {
         service: node {
-          id: id
+          id
           serviceName: name
           serviceSolutions: servicesolutions {
             id

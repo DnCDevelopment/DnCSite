@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contacts.scss';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import { IContactsData } from './CommonTypes';
 
 const CONTACTS_QUERY = graphql`
@@ -31,7 +31,7 @@ const Contacts: React.FC = () => {
             </li>
           ) : (
             <li key={`${id}_${title}`} className="contact-us-list-item">
-              <a href={href}>{title}</a>
+              <Link to={href}>{title}</Link>
             </li>
           )
         )}

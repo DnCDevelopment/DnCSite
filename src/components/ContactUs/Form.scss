@@ -5,15 +5,14 @@
         margin-bottom: 10px;
         &::before,&::after
         {
-            content: "";
             position: absolute;
-            
             display: block;
-            height: 10px;
             width: 10px;
+            height: 10px;
             background: transparent;
             border-color: var(--white-color);
             border-style: solid;
+            content: "";
         }
             
         &::before
@@ -24,30 +23,30 @@
         }
         &::after
         {
-            bottom: 0;
             right: 0;
+            bottom: 0;
             border-width: 0 1px 1px 0px;
         }
         
     }
 	form {
-        margin-top: 20px;
 		display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 20px;
        
 
 		input {
             display: block;
             width: 180px;
-            background: transparent;
             color: var(--white-color);
+            font-weight: var(--weight-normal);
+            font-size: var(--font-15);
             font-style: normal;
-            font-weight: normal;
-            font-size: 15px;
             letter-spacing: 0.195em;
-            text-transform: lowercase;
             text-align: center;
+            text-transform: lowercase;
+            background: transparent;
 
         }
         
@@ -60,12 +59,12 @@
             margin-top: 10px;
             padding: 10px 0;
             color: var(--white-color);
-            font-size: 15px;
+            font-weight: var(--weight-bold);
+            font-size: var(--font-15);
             font-style: normal;
-            font-weight: bold;
             letter-spacing: 0.32em;
-            text-transform: uppercase;
             text-align: center;
+            text-transform: uppercase;
             border:1px solid var(--white-color);
         }
 	}
@@ -93,8 +92,8 @@
     .contact-us-form {
         form 
         {
-            margin-top: 70px;
             align-items: flex-start;
+            margin-top: 70px;
             input 
             {
                 width: 180px;

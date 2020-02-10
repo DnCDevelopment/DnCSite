@@ -1,29 +1,29 @@
 .contact-us {
-	padding: 125px 20px 0;
+	width: 100%;
 
 	height: 100%;
-	width: 100%;
+	padding: 125px 20px 0;
 	background-color: var(--primary-black-color);
 	.subtitle {
 		display: none;
 	}
 	&-block {
-		height: 100%;
-		width: 100%;
 		display: flex;
 		flex-direction: column;
+		width: 100%;
+		height: 100%;
 	}
 	&-header {
+		color: var(--white-color);
+		font-weight: var(--weight-800);
+		font-size: var(--font-40);
 		font-family: var(--font-open-sans);
 		font-style: normal;
-		font-weight: 800;
-		font-size: 40px;
 		line-height: 30px;
-		color: var(--white-color);
 		text-transform: uppercase;
 		span {
-			font-size: 30px;
 			color: var(--primary-blue-color);
+			font-size: var(--font-30);
 		}
 	}
 }
@@ -33,9 +33,9 @@
 	left: 0;
 	width: 100%;
 	color: var(--white-color);
-	font-size: 10px;
+	font-weight: var(--weight-bold);
+	font-size: var(--font-10);
 	font-style: normal;
-	font-weight: bold;
 	text-align: center;
 }
 
@@ -62,7 +62,7 @@
 		}
 		&-header,
 		&-header span {
-			font-size: 45px;
+			font-size: var(--font-45);
 			line-height: 45px;
 		}
 	}
@@ -75,7 +75,7 @@
 	.contact-us {
 		&-header,
 		&-header span {
-			font-size: 50px;
+			font-size: var(--font-50);
 			line-height: 50px;
 		}
 	}
@@ -88,7 +88,7 @@
 		}
 		&-header,
 		&-header span {
-			font-size: 60px;
+			font-size: var(--font-60);
 			line-height: 60px;
 		}
 	}
@@ -98,7 +98,7 @@
 	.contact-us {
 		&-header,
 		&-header span {
-			font-size: 70px;
+			font-size: var(--font-70);
 			line-height: 70px;
 		}
 	}
@@ -107,7 +107,7 @@
     .contact-us {
 		&-header,
 		&-header span {
-			font-size: 80px;
+			font-size: var(--font-80);
 			line-height: 80px;
 		}
 	}
