@@ -17,7 +17,7 @@ export interface ILogo {
 export interface IServiceSolution {
   id: number | string;
   solutionName: string;
-  svg: string;
+  shortName: string;
   description: string;
   service: number;
 }

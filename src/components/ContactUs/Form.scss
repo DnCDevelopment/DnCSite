@@ -1,108 +1,104 @@
 .contact-us-form {
-    &-input
-    {
-        position: relative;
-        margin-bottom: 10px;
-        &::before,&::after
-        {
-            position: absolute;
-            display: block;
-            width: 10px;
-            height: 10px;
-            background: transparent;
-            border-color: var(--white-color);
-            border-style: solid;
-            content: "";
-        }
-            
-        &::before
-        {
-            top: 0;
-            left: 0;
-            border-width: 1px 0 0 1px;
-        }
-        &::after
-        {
-            right: 0;
-            bottom: 0;
-            border-width: 0 1px 1px 0px;
-        }
-        
-    }
+	&-input {
+		position: relative;
+		margin-bottom: 10px;
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			width: 10px;
+			height: 10px;
+			background: transparent;
+			border-color: var(--white-color);
+			border-style: solid;
+			content: "";
+		}
+
+		&::before {
+			top: 0;
+			left: 0;
+			border-width: 1px 0 0 1px;
+		}
+		&::after {
+			right: 0;
+			bottom: 0;
+			border-width: 0 1px 1px 0px;
+		}
+		.white-bg &::before,
+		.white-bg &::after {
+			border-color: var(--primary-black-color);
+		}
+	}
 	form {
 		display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-       
+		flex-direction: column;
+		align-items: center;
+		margin-top: 20px;
 
 		input {
-            display: block;
-            width: 180px;
-            color: var(--white-color);
-            font-weight: var(--weight-normal);
-            font-size: var(--font-15);
-            font-style: normal;
-            letter-spacing: 0.195em;
-            text-align: center;
-            text-transform: lowercase;
-            background: transparent;
+			display: block;
+			width: 180px;
+			color: var(--white-color);
+			font-weight: var(--weight-normal);
+			font-size: var(--font-15);
+			font-style: normal;
+			letter-spacing: 0.195em;
+			text-align: center;
+			text-transform: lowercase;
+			background: transparent;
+			.white-bg & {
+				color: var(--primary-black-color);
+			}
+		}
 
-        }
-        
 		input:not([type="submit"]) {
-            padding: 5px 0px;
-            border: none;
-        }
-        input[type="submit"]
-        {
-            margin-top: 10px;
-            padding: 10px 0;
-            color: var(--white-color);
-            font-weight: var(--weight-bold);
-            font-size: var(--font-15);
-            font-style: normal;
-            letter-spacing: 0.32em;
-            text-align: center;
-            text-transform: uppercase;
-            border:1px solid var(--white-color);
-        }
+			padding: 5px 0px;
+			border: none;
+		}
+		input[type="submit"] {
+			margin-top: 10px;
+			padding: 10px 0;
+			color: var(--white-color);
+			font-weight: var(--weight-bold);
+			font-size: var(--font-15);
+			font-style: normal;
+			letter-spacing: 0.32em;
+			text-align: center;
+			text-transform: uppercase;
+			border: 1px solid var(--white-color);
+			.white-bg & {
+				color: var(--primary-black-color);
+				border-color: var(--primary-black-color);
+			}
+		}
 	}
 }
 
-@media only screen and (min-height:700px)
-{
-    .contact-us-form {
-        form 
-        {
-            margin-top: 30px;
-            input 
-            {
-                width: 220px;
-            }
-            input:not([type="submit"]) {
-                padding: 10px 0;
-            }
-        }
-    }
+@media only screen and (min-height: 700px) {
+	.contact-us-form {
+		form {
+			margin-top: 30px;
+			input {
+				width: 220px;
+			}
+			input:not([type="submit"]) {
+				padding: 10px 0;
+			}
+		}
+	}
 }
 
-@media only screen and (min-width:768px)
-{
-    .contact-us-form {
-        form 
-        {
-            align-items: flex-start;
-            margin-top: 70px;
-            input 
-            {
-                width: 180px;
-            }
-            input[type="submit"]
-            {
-                width: 250px;
-            }
-
-        }
-    }
+@media only screen and (min-width: 768px) {
+	.contact-us-form {
+		form {
+			align-items: flex-start;
+			margin-top: 70px;
+			input {
+				width: 180px;
+			}
+			input[type="submit"] {
+				width: 250px;
+			}
+		}
+	}
 }

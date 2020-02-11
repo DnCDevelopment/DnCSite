@@ -10,6 +10,11 @@
 	--primary-purple-color: #a25fcc;
 	--transparent: transparent;
 
+	//gradients
+	--gradient-pink-red: linear-gradient(90deg, #8739af 0%, #f91e21 100%);
+	--gradient-blue: linear-gradient(90deg, #009fe3 0%, #8f4aff 100%);
+	--gradient-tricolor: linear-gradient(108.64deg, #12c2e9 0%, #c471ed 50.51%, #f64f59 98.95%);
+
 	//containers
 	--medium-container: 1300px;
 	--small-container: 1140px;
@@ -48,6 +53,8 @@
 	//transitions
 	--color-07-transition: color 0.7s;
 	--top-07-transition: top 0.7s;
+	--mheight-02-transition: max-height 0.2s;
+	--mb-02-transition: margin-bottom 0.2s;
 }
 
 body {
@@ -110,6 +117,9 @@ div.arrow {
 	height: 40px;
 	margin: 0 auto;
 	object-fit: contain;
+	.white-bg & {
+		filter: invert(100%);
+	}
 }
 @media only screen and (min-height: 600px) {
 	div.arrow {
