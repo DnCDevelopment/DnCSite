@@ -23,6 +23,7 @@ module.exports = {
           'mainpageservices',
           'mainpageportfolio',
           'portfolio',
+          'portfoliotypes',
           'services',
           'servicesolutions',
           'contacts',
