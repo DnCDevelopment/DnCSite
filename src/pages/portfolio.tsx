@@ -4,7 +4,7 @@ import Banner from '../components/Banner/Banner';
 import ContactUs from '../components/ContactUs/ContactUs';
 import nextBlock from '../components/Controls/nextBlockContext';
 import { IScrollCallbackArgs } from './CommonTypes';
-import PortfolioBlock from '../components/Portfolio/PortfolioBlock';
+import PortfolioBlock from '../components/Portfolio/PortfolioBlockTemp';
 
 const IndexPage: React.FC = (): JSX.Element => {
   const [current, setCurrent] = useState(0);
