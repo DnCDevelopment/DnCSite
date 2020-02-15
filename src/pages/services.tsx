@@ -13,7 +13,7 @@ const IndexPage: React.FC = (): JSX.Element => {
     activeClass: 'current',
     parallax: true,
     sectionClassName: 'section',
-    anchors: ['DnCBanner', 'Services', 'ContactUs'],
+    anchors: ['Banner', 'Services', 'ContactUs'],
     scrollBar: false,
     navigation: false,
     verticalAlign: false,
