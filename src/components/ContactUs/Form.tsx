@@ -39,6 +39,7 @@ const Form: React.FC = (): JSX.Element => {
       <form>
         <div className="contact-us-form-input">
           <input
+            className="contact-us-form-input-field"
             type="text"
             name="name"
             placeholder={namePlaceholder}
@@ -50,6 +51,7 @@ const Form: React.FC = (): JSX.Element => {
         </div>
         <div className="contact-us-form-input">
           <input
+            className="contact-us-form-input-field"
             type="tel"
             name="tel"
             placeholder={telPlaceholder}
@@ -61,6 +63,7 @@ const Form: React.FC = (): JSX.Element => {
         </div>
         <div className="contact-us-form-input">
           <input
+            className="contact-us-form-input-field"
             type="email"
             name="mail"
             placeholder={mailPlaceholder}
@@ -70,7 +73,7 @@ const Form: React.FC = (): JSX.Element => {
             }}
           />
         </div>
-        <input type="submit" value={sendTitle} onClick={handleSubmit} />
+        <input className="contact-us-form-submit" type="submit" value={sendTitle} onClick={handleSubmit} />
       </form>
     </div>
   );

@@ -28,49 +28,51 @@
 		.white-bg &::after {
 			border-color: var(--primary-black-color);
 		}
+		&-field {
+			padding: 5px 0px;
+			border: none;
+		}
 	}
+	&-input-field,
+	&-submit {
+		display: block;
+		width: 180px;
+		color: var(--white-color);
+		font-weight: var(--weight-normal);
+		font-size: var(--font-15);
+		font-style: normal;
+		letter-spacing: 0.195em;
+		text-align: center;
+		text-transform: lowercase;
+		background: transparent;
+		.white-bg & {
+			color: var(--primary-black-color);
+		}
+	}
+	// линтер зацикливается
+	/* stylelint-disable */
+	&-submit {
+	/* stylelint-enable */
+		margin-top: 10px;
+		padding: 10px 0;
+		color: var(--white-color);
+		font-weight: var(--weight-bold);
+		font-size: var(--font-15);
+		font-style: normal;
+		letter-spacing: 0.32em;
+		text-align: center;
+		text-transform: uppercase;
+		border: 1px solid var(--white-color);
+		.white-bg & {
+			border-color: var(--primary-black-color);
+		}
+	}
+
 	form {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		margin-top: 20px;
-
-		input {
-			display: block;
-			width: 180px;
-			color: var(--white-color);
-			font-weight: var(--weight-normal);
-			font-size: var(--font-15);
-			font-style: normal;
-			letter-spacing: 0.195em;
-			text-align: center;
-			text-transform: lowercase;
-			background: transparent;
-			.white-bg & {
-				color: var(--primary-black-color);
-			}
-		}
-
-		input:not([type="submit"]) {
-			padding: 5px 0px;
-			border: none;
-		}
-		input[type="submit"] {
-			margin-top: 10px;
-			padding: 10px 0;
-			color: var(--white-color);
-			font-weight: var(--weight-bold);
-			font-size: var(--font-15);
-			font-style: normal;
-			letter-spacing: 0.32em;
-			text-align: center;
-			text-transform: uppercase;
-			border: 1px solid var(--white-color);
-			.white-bg & {
-				color: var(--primary-black-color);
-				border-color: var(--primary-black-color);
-			}
-		}
 	}
 }
 
@@ -78,12 +80,13 @@
 	.contact-us-form {
 		form {
 			margin-top: 30px;
-			input {
-				width: 220px;
-			}
-			input:not([type="submit"]) {
-				padding: 10px 0;
-			}
+		}
+		&-input-field,
+		&-submit {
+			width: 220px;
+		}
+		&-input-field {
+			padding: 10px 0;
 		}
 	}
 }
@@ -93,12 +96,13 @@
 		form {
 			align-items: flex-start;
 			margin-top: 70px;
-			input {
-				width: 180px;
-			}
-			input[type="submit"] {
-				width: 250px;
-			}
+		}
+		&-input-field,
+		&-submit {
+			width: 180px;
+		}
+		&-submit {
+			width: 250px;
 		}
 	}
 }
