@@ -1,7 +1,8 @@
 .portfolio-block {
 	width: 100%;
     height: 100%;
-    padding: 140px 0;
+	padding: 140px 0;
+	overflow: hidden;
 	background: var(--primary-black-color);
 	&-header {
 		display: none;
@@ -87,7 +88,6 @@
 			background: var(--gradient-pink-red);
 			background-clip: text;
             opacity: 0.5;
-			user-select: none;
 			-webkit-text-fill-color: var(--transparent);
 		}
 	}

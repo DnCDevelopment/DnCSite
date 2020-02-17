@@ -2,6 +2,7 @@
 	width: 100%;
     height: 100%;
 	padding: 200px 0;
+	overflow: hidden;
 	background: var(--primary-black-color);
 	&-header {
 		display: none;
@@ -44,7 +45,7 @@
 	}
 }
 
-@media only screen and (min-width: 1024px) and (min-height: 768px) {
+@media only screen and (min-width: 1024px) and (min-height: 600px) {
 	.portfolio-block {
 		background-image: var(--portfolio-bg);
 		background-repeat: no-repeat;
