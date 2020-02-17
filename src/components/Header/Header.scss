@@ -1,12 +1,12 @@
 header {
-  height: 60px;
-  width: 100vw;
   position: fixed;
-  padding: 40px 40px;
+  z-index: 10;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  z-index: 10;
+  width: 100vw;
+  height: 60px;
+  padding: 40px 40px;
   .placeholder-div
   {
     width: 30px;
@@ -15,9 +15,16 @@ header {
 
 @media only screen and (min-width: 768px) {
   header {
-    padding:  60px 90px;
+    padding:  60px 50px;
     .placeholder-div {
       display: none;
     }
+  }
+}
+
+
+@media only screen and (min-width: 900px) {
+  header {
+    padding:  60px 90px;
   }
 }

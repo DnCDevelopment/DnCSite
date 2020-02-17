@@ -28,6 +28,7 @@ export interface IService {
   svg?: string;
   description?: string;
   serviceSolutions: IServiceSolution[];
+  dataKey: number;
 }
 
 export interface ITechnology {
@@ -35,6 +36,9 @@ export interface ITechnology {
     id: number | string;
     name: string;
     svg: string;
+    x: number;
+    y: number;
+    viewSize: string;
   };
 }
 

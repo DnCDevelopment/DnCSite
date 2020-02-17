@@ -1,14 +1,35 @@
-div.mainpage-sevices
-{
-    h2 
-    {
-        display: none;
-    }
+.mainpage-services {
+	&-header {
+		display: none;
+	}
 }
-@media only screen and (min-height:700px)
-{
-    div.mainpage-sevices
-    {
-            
-    }
+
+@media only screen and (min-width: 768px) {
+	.mainpage-services {
+		&-items {
+			display: flex;
+			padding: 0 0px;
+		}
+	}
+}
+@media only screen and (min-width: 900px) {
+	.mainpage-services-items {
+		padding: 0 35px;
+	}
+}
+@media only screen and (min-width: 1100px) {
+	.mainpage-services-items {
+		padding: 0 115px;
+	}
+}
+@media only screen and (min-width: 1500px) {
+	.mainpage-services-items {
+		padding: 0 150px 40px;
+	}
+}
+
+@media screen and (device-aspect-ratio: 1024/1366) and (min-width: 1024px) {
+	.mainpage-services-items {
+		padding: 0 0 30px;
+	}
 }

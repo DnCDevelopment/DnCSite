@@ -25,6 +25,10 @@ module.exports = {
           'portfolio',
           'services',
           'servicesolutions',
+          'contacts',
+          'contactsblock',
+          'contactsblock',
+          'contactform',
           'technology',
         ],
         loginData: {
@@ -90,11 +94,18 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-svg',
   ],
 };

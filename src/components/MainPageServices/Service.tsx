@@ -2,7 +2,7 @@ import React from 'react';
 import './Service.scss';
 import { IService } from '../../Types/CommonTypes';
 
-const Service: React.FC<IService> = ({ serviceName, serviceSolutions }): JSX.Element => {
+const Service: React.FC<IService> = ({ serviceName, serviceSolutions, dataKey }): JSX.Element => {
   return (
     <div className="service-item">
       <h3>{serviceName}</h3>
@@ -15,6 +15,7 @@ const Service: React.FC<IService> = ({ serviceName, serviceSolutions }): JSX.Ele
           </ol>
         </>
       )}
+      <span className="service-item-number">{`0${dataKey}`}</span>
     </div>
   );
 };

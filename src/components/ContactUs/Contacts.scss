@@ -1,0 +1,38 @@
+.contact-us-list {
+    padding-top: 30px;
+    list-style: none;
+    &-item
+    {
+        margin-bottom: 10px;
+    }
+	&-item,
+	&-item a {
+        color: var(--white-color);
+		font-weight: var(--weight-bold);
+		font-size: var(--font-15);
+		font-style: normal;
+        line-height: 20px;
+        text-decoration: none;
+	}
+}
+
+
+@media only screen and (min-height:700px)
+{
+    .contact-us-list {
+        padding-bottom: 20px;
+    }
+}
+@media only screen and (min-height:750px)
+{
+    .contact-us-list {
+        padding-bottom: 40px;
+    }   
+}
+
+@media only screen and (min-height:750px)
+{
+    .contact-us-list {
+        padding: 60px 0;
+    }
+}

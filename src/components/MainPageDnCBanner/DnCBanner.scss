@@ -2,26 +2,25 @@ div.mainpage-dnc-banner
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
+    justify-content: center;
     width: 100%;
     height: 100vh;
     padding: 0px 29px 0 45px;
-
     background: var(--primary-black-color);
     background-image: url(../../assets/images/illustrations/dnc-banner-lines.png);
+    background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
-    background-repeat: no-repeat;
     h1 
     {
 
         color: var(--white-color);
+        font-weight: var(--weight-bold);
+        font-size: var(--font-60);
+        font-style: normal;
 
         line-height: 1em;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 60px;
         word-wrap: break-word;
         span 
         {
@@ -39,7 +38,7 @@ div.mainpage-dnc-banner
     {
         h1 
         {
-            font-size: 80px;
+            font-size: var(--font-80);
         }
     }
 
@@ -52,7 +51,7 @@ div.mainpage-dnc-banner
         padding: 0px 0px 0 200px;
         h1 
         {
-            font-size: 100px;
+            font-size: var(--font-100);
         }
     }
 }

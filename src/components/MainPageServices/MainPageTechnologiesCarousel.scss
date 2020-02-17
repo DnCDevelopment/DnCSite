@@ -1,51 +1,22 @@
-/* Тут дохуя импортантов потому что я скачал говно ебаное а не слайдер*/
-.paging-item
-{
-    display: none;
+.react-multi-carousel {
+	&-list {
+		height: 85px;
+	}
+	&-track,
+	&-item,
+	&-list div,
+	&-list svg {
+		height: 100%;
+	}
 }
 
-button.slider-controls
-{
-    background: transparent;
-    border:none;
-    &.prev 
-    {
-        transform: rotate(180deg);
-    }
-    &:disabled
-    {
-        opacity: 0.2;
-    }
+@media only screen and (min-height: 600px) {
+	.react-multi-carousel-list {
+		height: 120px;
+	}
 }
-
-.slider-list {
-    height: 89px!important;
-}
-
-.slider-slide {
-    height: 100%!important;
-    div
-    {
-        height: 100%!important;
-        svg
-        {
-            height: 100%!important;
-        }
-    }
-}
-
-@media only screen and (min-height:600px)
-{
-    .slider-list 
-    {
-        height: 120px!important;
-    }   
-}
-@media only screen and (min-height:800px)
-{
-    .slider-list 
-    {
-        height: 160px!important;
-    }   
-    
+@media only screen and (min-height: 800px) {
+	.sreact-multi-carousel-list {
+		height: 160px;
+	}
 }

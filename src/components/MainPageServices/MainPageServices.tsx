@@ -9,7 +9,7 @@ const SERVICEQUERY = graphql`
     allStrapiServices(filter: { mainpageservice: { id: { eq: 1 } } }) {
       services: edges {
         service: node {
-          strapiId: id
+          id
           serviceName: name
           serviceSolutions: servicesolutions {
             id
@@ -30,12 +30,14 @@ const MainPageServices: React.FC = (): JSX.Element => {
     block: { title },
   }: IMainPageServices = useStaticQuery(SERVICEQUERY);
   return (
-    <div className="mainpage-sevices">
-      <h2>{title}</h2>
-      {services.length > 0 &&
-        services.map(({ service: { id, serviceName, serviceSolutions } }) => (
-          <Service key={`${id}_${serviceName}`} serviceName={serviceName} serviceSolutions={serviceSolutions} />
-        ))}
+    <div className="mainpage-services">
+      <h2 className="mainpage-services-header">{title}</h2>
+      <div className="mainpage-services-items">
+        {services.length > 0 &&
+          services.map(({ service: { id, serviceName, serviceSolutions } }, dataKey) => (
+            <Service key={`${id}_${serviceName}`} serviceName={serviceName} serviceSolutions={serviceSolutions} dataKey={dataKey + 1} />
+          ))}
+      </div>
     </div>
   );
 };
