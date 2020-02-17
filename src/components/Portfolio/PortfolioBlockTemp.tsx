@@ -51,7 +51,7 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
           renderDotsOutside
           renderButtonGroupOutside={window.innerWidth > 1024}
           infinite
-          centerMode
+          centerMode={window.innerWidth > 1365}
         >
           {/* Повторяется пушо там надо минимум 6 елементов вроде что бы работало на десктопах */}
           {/* Тут начало */}
