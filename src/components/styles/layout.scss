@@ -167,6 +167,7 @@ h3 {
 
 .section {
 	position: relative;
+	overflow: hidden!important; /* временная хуйня, надеюсь */
 }
 
 .post-btn {
