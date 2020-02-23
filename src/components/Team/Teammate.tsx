@@ -1,0 +1,23 @@
+import React from 'react';
+import { ITeammate } from '../../Types/CommonTypes';
+import './Teammate.scss';
+
+const Teammate: React.FC<ITeammate> = ({ teammateName, position, description, picture }): JSX.Element => {
+  const {
+    childImageSharp: {
+      fluid: { src },
+    },
+    name,
+  } = picture;
+
+  return (
+    <div className="team-member">
+      <img className="team-member-picture" src={src} alt={name} />
+      <h3 className="team-member-name">{teammateName}</h3>
+      <h4 className="team-member-position">{position}</h4>
+      <p className="team-member-description">{description}</p>
+    </div>
+  );
+};
+
+export default Teammate;

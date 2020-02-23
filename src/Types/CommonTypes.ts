@@ -7,6 +7,25 @@ export interface IImage {
   name: string;
 }
 
+export interface IClient {
+  id?: number | string;
+  clientName: string;
+  svg: string;
+}
+export interface ITeammate {
+  id?: number | string;
+  teammateName: string;
+  position: string;
+  descritpion: string;
+  picture: IImage;
+}
+
+export interface ITextBlock {
+  id?: number | string;
+  title: string;
+  text: string;
+}
+
 export interface IPortfolio {
   id?: number | string;
   name?: string;

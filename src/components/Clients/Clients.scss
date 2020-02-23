@@ -1,0 +1,122 @@
+.clients {
+	width: 100%;
+	height: 100%;
+	padding: 150px 50px 0;
+	background: var(--primary-black-color);
+	&-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: var(--white-color);
+		font-weight: var(--weight-800);
+		font-size: var(--font-40);
+		font-family: var(--font-open-sans);
+		line-height: var(--font-40);
+		text-transform: uppercase;
+		&-blue {
+			color: var(--primary-blue-color);
+			font-size: var(--font-35);
+		}
+	}
+	&-container {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: repeat(3, 1fr);
+		margin-top: 20px;
+		&-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			padding: 10px;
+			background-color: var(--white-color);
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (orientation: portrait) and (min-height: 660px) {
+	.clients {
+		padding: 190px 50px 0;
+		&-container-item {
+			padding: 15px;
+		}
+	}
+}
+
+@media only screen and (orientation: landscape) and (min-width: 1024px) {
+	.clients {
+		&-header {
+			flex-direction: row;
+			justify-content: center;
+			font-size: var(--font-50);
+			&-blue {
+				padding-left: 20px;
+				font-size: var(--inherit);
+			}
+		}
+		&-container {
+			grid-row-gap: 25px;
+			grid-column-gap: 35px;
+			grid-template-columns: repeat(5, 1fr);
+			width: 640px;
+			margin: 60px auto;
+			&-item {
+				padding: 20px;
+			}
+		}
+	}
+}
+
+@media only screen and (orientation: landscape) and (min-width: 1280px) {
+	.clients {
+		&-container {
+			width: 680px;
+		}
+	}
+}
+
+@media only screen and (orientation: landscape) and (min-width: 1600px) {
+	.clients {
+		&-header {
+			font-size: var(--font-60);
+		}
+		&-container {
+			width: 720px;
+		}
+	}
+}
+
+@media only screen and (orientation: landscape) and (min-width: 1900px) {
+	.clients {
+		&-header {
+			font-size: var(--font-80);
+		}
+		&-container {
+			width: 760px;
+			margin-top: 100px;
+		}
+	}
+}
+
+@media only screen and (orientation: landscape) and (min-width: 2200px) {
+	.clients {
+		&-container {
+			width: 53%;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.clients {
+		padding: 190px 155px 0;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.clients {
+		padding: 190px 200px 0;
+	}
+}

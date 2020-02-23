@@ -20,6 +20,8 @@ module.exports = {
           'socialicon',
           'settings',
           'aboutus',
+          'clients',
+          'abouttextblock',
           'mainpageservices',
           'mainpageportfolio',
           'portfolio',
@@ -31,6 +33,7 @@ module.exports = {
           'contactsblock',
           'contactform',
           'technology',
+          'team',
         ],
         loginData: {
           identifier: process.env.LOGIN,
