@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { IMainAbout } from '../../Types/CommonTypes';
 import Arrow from '../Controls/Arrow';
 import nextBlock from '../Controls/nextBlockContext';
+import { IAboutUsComponent } from './CommonTypes';
 import './AboutUs.scss';
 
 const ABOUTUS_QUERY = graphql`
@@ -25,7 +26,7 @@ const ABOUTUS_QUERY = graphql`
   }
 `;
 
-const AboutUs: React.FC = ({ additionalClass = 'main-page' }): JSX.Element => {
+const AboutUs: React.FC<IAboutUsComponent> = ({ additionalClass = 'main-page' }): JSX.Element => {
   const {
     aboutUs: {
       title,

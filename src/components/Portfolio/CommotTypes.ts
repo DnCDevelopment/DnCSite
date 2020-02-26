@@ -8,12 +8,12 @@ export interface IPortfolioType {
 
 export interface IPortfolioTypeData {
   data: {
-    types: IPortfolioType;
+    types: IPortfolioType[];
   };
 }
 
 export interface IPotfolioTypeSelect {
   types: IPortfolioType[];
   currentType: number;
-  changeType: (number) => void;
+  changeType: (arg0: number) => void;
 }

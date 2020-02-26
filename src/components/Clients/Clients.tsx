@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import nextBlock from '../Controls/nextBlockContext.ts';
+import nextBlock from '../Controls/nextBlockContext';
 import Arrow from '../Controls/Arrow';
 import { IClientData } from './CommonTypes';
 import './Clients.scss';

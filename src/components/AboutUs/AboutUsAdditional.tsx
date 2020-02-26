@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { ITextBlock } from '../../Types/CommonTypes';
+import { ITextData } from './CommonTypes';
 import Arrow from '../Controls/Arrow';
 import nextBlock from '../Controls/nextBlockContext';
 import './AboutUsAdditional.scss';
@@ -20,7 +20,7 @@ const ABOUT_US_TEXT_QUERY = graphql`
 const AboutUsAdditional: React.FC = (): JSX.Element => {
   const {
     data: { textBlocks },
-  }: ITextBlock = useStaticQuery(ABOUT_US_TEXT_QUERY);
+  }: ITextData = useStaticQuery(ABOUT_US_TEXT_QUERY);
   return (
     <div className="about-text">
       {textBlocks.map(({ id, title, text }) => (

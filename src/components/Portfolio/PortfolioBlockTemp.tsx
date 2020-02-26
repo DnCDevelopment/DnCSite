@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Carousel from 'react-multi-carousel';
 import PortfolioCarouselItem from './PortfolioCarouselItem';
 import CarouselButtonGroup from '../Controls/CarouselButtonGroup';
-import { IPortfolioData } from '../../Types/CommonTypes.ts';
+import { IPortfolioCarousel } from '../../Types/CommonTypes';
 import './PortfolioBlockTemp.scss';
 
 const PORTFOLIO_QUERY_TEMP = graphql`
@@ -22,7 +22,7 @@ const PORTFOLIO_QUERY_TEMP = graphql`
 const PortfolioBlock: React.FC = (): JSX.Element => {
   const {
     data: { portfolioItems: visiblePortfolios },
-  }: IPortfolioData = useStaticQuery(PORTFOLIO_QUERY_TEMP);
+  }: IPortfolioCarousel = useStaticQuery(PORTFOLIO_QUERY_TEMP);
 
   const responsive = {
     desctop: {

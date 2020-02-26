@@ -1,11 +1,10 @@
-import React from 'react';
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Carousel from 'react-multi-carousel';
 import PortfolioCarouselItem from './PortfolioCarouselItem';
 import CarouselButtonGroup from '../Controls/CarouselButtonGroup';
 import WorksTypeSelect from './WorksTypeSelect';
-import { IPortfolioTypes } from './CommotTypes';
+import { IPortfolioTypeData } from './CommotTypes';
 import './PortfolioBlock.scss';
 
 const PORTFOLIO_QUERY = graphql`
@@ -28,7 +27,7 @@ const PORTFOLIO_QUERY = graphql`
 const PortfolioBlock: React.FC = (): JSX.Element => {
   const {
     data: { types },
-  }: IPortfolioTypes = useStaticQuery(PORTFOLIO_QUERY);
+  }: IPortfolioTypeData = useStaticQuery(PORTFOLIO_QUERY);
   const [currentType, changeType] = useState(0);
   const [visiblePortfolios, changeVisiblePortfolios] = useState(types[currentType].portfolios);
   useEffect(() => {

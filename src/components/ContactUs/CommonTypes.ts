@@ -1,3 +1,7 @@
+export interface IContactsComponent {
+  isContactsPage?: boolean;
+}
+
 export interface IContact {
   id: string;
   title: string;
@@ -20,4 +24,25 @@ export interface IFormData {
     mailPlaceholder: string;
     sendTitle: string;
   };
+}
+
+export interface IAdressData {
+  data: {
+    addressTitle: string;
+    address: string;
+    workTimeTitle: string;
+    worktime: string;
+    map: string;
+  };
+}
+
+export interface IPoolData {
+  data: {
+    variants: IPoolVariant[];
+  };
+}
+
+export interface IPoolVariant {
+  id: string | number;
+  title: string;
 }

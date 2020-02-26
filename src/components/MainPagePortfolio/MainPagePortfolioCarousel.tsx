@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Carousel from 'react-multi-carousel';
 import CarouselButtonGroup from '../Controls/CarouselButtonGroup';
 import PortfolioCarouselItem from '../Portfolio/PortfolioCarouselItem';
-import { IPortfolioData } from '../../Types/CommonTypes';
+import { IPortfolioCarousel } from '../../Types/CommonTypes';
 import './MainPagePortfolioCarousel.scss';
 
 const PORTFOLIO_CAROUSEL_QUERY = graphql`
@@ -22,7 +22,7 @@ const PORTFOLIO_CAROUSEL_QUERY = graphql`
 const MainPagePortfolioCarousel: React.FC = (): JSX.Element => {
   const {
     data: { portfolioItems },
-  }: IPortfolioData = useStaticQuery(PORTFOLIO_CAROUSEL_QUERY);
+  }: IPortfolioCarousel = useStaticQuery(PORTFOLIO_CAROUSEL_QUERY);
 
   const responsive = {
     mobile: {
