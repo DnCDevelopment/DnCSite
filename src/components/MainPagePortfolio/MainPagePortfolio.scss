@@ -6,6 +6,7 @@
     width: 100vw;
     height: 100vh;
     padding-top: 205px;
+    overflow: hidden;
     background-color: var(--primary-black-color);
     &-header
     {
@@ -29,20 +30,6 @@
         {
             display: none;
         }
-        &::selection 
-        {
-            background: transparent;
-        }
-    }
-    .slider 
-    {
-        display: block;
-        height: 190px!important;
-        &-control-centerright,&-control-centerleft
-        {
-            padding: 0 10px;
-            filter: invert(1);
-        }        
     }
 }
 
@@ -50,9 +37,9 @@
 {
     .mainpage-portfolio
     {
-        align-items: center;
+        align-self: center;
         padding-top: 0;
-        background-image: url(../../assets/images/illustrations/portfiolio-bg.svg);
+        background-image: var(--portfolio-mainpage-bg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;

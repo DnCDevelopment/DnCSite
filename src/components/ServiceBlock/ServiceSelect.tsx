@@ -4,7 +4,6 @@ import ArrowSVG from '../../assets/images/illustrations/arrow-small.inline.svg';
 import { IServicesSelect } from './CommonTypes';
 
 const ServiceSelect: React.FC<IServicesSelect> = ({ services, onChange, currentValue }): JSX.Element => {
-  /* Лол, стилизировать опшены у селекта нельзя норм, поэтому так буит самопис */
   const [isOpen, changeOpen] = useState(false);
 
   return (

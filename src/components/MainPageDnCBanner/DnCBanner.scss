@@ -8,7 +8,7 @@ div.mainpage-dnc-banner
     height: 100vh;
     padding: 0px 29px 0 45px;
     background: var(--primary-black-color);
-    background-image: url(../../assets/images/illustrations/dnc-banner-lines.png);
+    background-image: var(--dnc-lines);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
