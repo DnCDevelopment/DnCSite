@@ -14,6 +14,12 @@
 		background: var(--gradient-pink-red);
 		background-clip: text;
 		-webkit-text-fill-color: var(--transparent);
+		.blue-title &
+		{
+			background: var(--gradient-blue-contacts);	
+			background-clip: text;
+			-webkit-text-fill-color: var(--transparent);
+		}
 	}
 	.white-bg &
 	{

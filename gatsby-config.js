@@ -16,6 +16,7 @@ module.exports = {
         apiURL: 'http://46.101.116.184:1337',
         queryLimit: 1000,
         contentTypes: [
+          'adressdata',
           'menu',
           'socialicon',
           'settings',
@@ -24,6 +25,7 @@ module.exports = {
           'abouttextblock',
           'mainpageservices',
           'mainpageportfolio',
+          'pool',
           'portfolio',
           'portfoliotypes',
           'services',

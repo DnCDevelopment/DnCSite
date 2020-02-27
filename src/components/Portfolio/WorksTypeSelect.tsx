@@ -1,8 +1,8 @@
 import React from 'react';
-import { IPortfolioType } from './CommotTypes';
+import { IPotfolioTypeSelect } from './CommotTypes';
 import './WorksTypeSelect.scss';
 
-const WorksTypeSelect: React.FC<IPortfolioType[]> = ({ types, currentType, changeType }): JSX.Element => {
+const WorksTypeSelect: React.FC<IPotfolioTypeSelect> = ({ types, currentType, changeType }): JSX.Element => {
   return (
     <div className="portfolio-block-select">
       {types.map(({ id, name }, index) => (

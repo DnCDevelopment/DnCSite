@@ -60,7 +60,7 @@ const Team: React.FC = (): JSX.Element => {
               key={`${id}_${teammateName}`}
               teammateName={teammateName}
               position={position}
-              description={description}
+              descritpion={description}
               picture={picture}
             />
           ))}
