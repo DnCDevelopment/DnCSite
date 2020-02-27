@@ -97,6 +97,7 @@
 				font-size: var(--font-20);
 			}
 		}
+		
 	}
 }
 
@@ -169,7 +170,7 @@
 				border: 2px solid #000000;
 			}
 		}
-		.image-block {
+		&.main-page .image-block {
 			z-index: 1;
 			min-width: 50%;
 			height: auto;
@@ -193,8 +194,10 @@
 		padding: 190px 50px 130px;
 		.image-block {
 			grid-row: 1;
+			min-width: 100%;
 			min-height: 100%;
 			margin: 0;
+			padding: 0;
 
 		}
 		.text-block {

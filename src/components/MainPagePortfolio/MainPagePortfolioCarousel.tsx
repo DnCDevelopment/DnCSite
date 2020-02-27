@@ -44,7 +44,7 @@ const MainPagePortfolioCarousel: React.FC = (): JSX.Element => {
         removeArrowOnDeviceType={['laptop', 'mobile']}
         slidesToSlide={1}
         infinite
-        centerMode={window.innerWidth > 767} // оно норм при ресайзе ес шо
+        centerMode={window.innerWidth > 767}
       >
         {portfolioItems.map(({ id, name, svg, rgba }) => (
           <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
