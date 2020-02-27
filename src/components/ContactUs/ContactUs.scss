@@ -49,7 +49,6 @@
 	text-align: center;
 	.white-bg & {
 		color: var(--primary-black-color);
-	}
 }
 
 @media only screen and (min-height: 660px) {
@@ -117,7 +116,7 @@
 	}
 }
 @media only screen and (min-width: 1700px) {
-	.contact-us {
+    .contact-us {
 		&-header,
 		&-header span {
 			font-size: var(--font-80);

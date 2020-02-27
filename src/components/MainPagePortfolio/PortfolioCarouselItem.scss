@@ -1,0 +1,14 @@
+.portfolio-carousel-item {
+	width: 255px;
+}
+@media only screen and (min-width: 1024px) {
+	.portfolio-carousel-item {
+        width: 100%;
+        svg
+        {
+            min-width:100%;
+            min-height: 100%;
+            padding: 150px;
+        }
+	}
+}
