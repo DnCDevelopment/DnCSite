@@ -41,10 +41,10 @@ const MainPagePortfolioCarousel: React.FC = (): JSX.Element => {
       <Carousel
         responsive={responsive}
         customButtonGroup={<CarouselButtonGroup />}
-        removeArrowOnDeviceType={['laptop', 'mobile']}
         slidesToSlide={1}
         infinite
         centerMode={window.innerWidth > 767}
+        renderButtonGroupOutside={window.innerWidth > 767}
       >
         {portfolioItems.map(({ id, name, svg, rgba }) => (
           <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />

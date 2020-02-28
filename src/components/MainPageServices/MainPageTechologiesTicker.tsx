@@ -3,10 +3,15 @@ import { ITechnologiesData } from '../../Types/CommonTypes';
 import './MainPageTechologiesTicker.scss';
 
 const TickerAnimation: () => void = () => {
+  const isOutRules = {
+    'techologies-ticker-item-bg': 50,
+    'techologies-ticker-item-md': 100,
+    'techologies-ticker-item-sm': 150,
+  };
   Array.prototype.forEach.call(document.getElementsByClassName('techologies-ticker-item'), el => {
-    const { style } = el;
+    const { style, classList } = el;
     setTimeout(function move() {
-      const isOut: boolean = el.offsetLeft + el.offsetWidth + 100 > 0;
+      const isOut: boolean = el.offsetLeft + el.offsetWidth + isOutRules[classList[1]] > 0;
       const currentX: number = isOut ? parseInt(el.style.left, 10) : window.innerWidth + el.offsetWidth;
       if (isOut) {
         style.transition = '0ms';

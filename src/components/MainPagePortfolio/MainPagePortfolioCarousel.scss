@@ -34,8 +34,10 @@
 
 @media only screen and (min-width: 768px) {
 	.mainpage-portfolio {
-		.carousel-button-group-btn {
-			display: none;
+		.carousel-button-group {
+			justify-content: space-around;
+			height: auto;
+			margin-top: 20px;
 		}
 		.portfolio-carousel-item {
 			margin: 0 60px;
