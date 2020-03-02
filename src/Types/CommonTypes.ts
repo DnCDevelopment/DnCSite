@@ -7,6 +7,17 @@ export interface IImage {
   name: string;
 }
 
+export interface IPortfolio {
+  id?: number | string;
+  name?: string;
+  svg: string;
+  rgba: string;
+}
+
+export interface IPortfolioCarousel {
+  data: { portfolioItems: IPortfolio[] };
+}
+
 export interface ILogo {
   settings: {
     logo: IImage;
@@ -17,7 +28,7 @@ export interface ILogo {
 export interface IServiceSolution {
   id: number | string;
   solutionName: string;
-  svg: string;
+  shortName: string;
   description: string;
   service: number;
 }

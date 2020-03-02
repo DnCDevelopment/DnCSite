@@ -1,0 +1,134 @@
+.portfolio-block {
+	width: 100%;
+    height: 100%;
+	padding: 140px 0;
+	overflow: hidden;
+	background: var(--primary-black-color);
+	&-header {
+		display: none;
+	}
+
+	.react-multi-carousel {
+		&-item {
+			padding: 0 45px;
+		}
+		&-list {
+			height: 255px;
+			.portfolio-carousel-item {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+			}
+		}
+		&-dot {
+			width: 12px;
+			height: 12px;
+			margin: 0 10px;
+			overflow: hidden;
+			background: var(--white-color);
+			border-radius: 100%;
+			opacity: 0.5;
+			&--active {
+				opacity: 1;
+			}
+			&-list {
+				display: flex;
+				justify-content: center;
+				margin-top: 45px;
+			}
+		}
+	}
+	.carousel-button-group {
+		padding: 20px;
+		filter: invert(1);
+	}
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 768px) {
+	.portfolio-block {
+		background-image: var(--portfolio-bg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		.react-multi-carousel {
+			&-list {
+				height: 450px;
+				.portfolio-carousel-item {
+					height: 220px;
+					svg {
+						padding: 50px;
+					}
+				}
+			}
+		}
+		.carousel-column {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+		}
+		.carousel-button-group {
+			position: relative;
+			height: auto;
+			margin-top: -35px;
+			padding: 20px 400px;
+		}
+		&-header {
+			position: absolute;
+			top: 50%;
+            left: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+            width: auto;
+            margin-top: -100px;
+            margin-left: -450px;
+			font-size: var(--font-200);
+			text-transform: uppercase;
+			background: var(--gradient-pink-red);
+			background-clip: text;
+            opacity: 0.5;
+			-webkit-text-fill-color: var(--transparent);
+		}
+	}
+}
+
+@media only screen and (min-width: 1366px) {
+	.portfolio-block {
+		.react-multi-carousel {
+			&-list {
+				.portfolio-carousel-item {
+					svg {
+						padding: 80px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 900px) {
+	.portfolio-block {
+		.react-multi-carousel {
+			&-list {
+				height: 600px;
+				.portfolio-carousel-item {
+					height: 290px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1000px) {
+	.portfolio-block {
+		.react-multi-carousel {
+			&-list {
+				height: 700px;
+				.portfolio-carousel-item {
+					height: 340px;
+				}
+			}
+		}
+	}
+}

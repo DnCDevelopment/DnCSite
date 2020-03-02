@@ -1,0 +1,36 @@
+.portfolio-block-select {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin: 0 30px 60px;
+	&-option {
+		color: var(--white-color);
+		background: var(--transparent);
+		border: 1px solid var(--white-color);
+		&,
+		&-selected {
+			padding: 5px 0;
+			font-weight: var(--weight-bold);
+			font-size: var(--font-10);
+			font-style: normal;
+			text-align: center;
+		}
+		&-selected {
+			color: var(--primary-black-color);
+			background: var(--white-color);
+		}
+	}
+}
+
+@media only screen and (min-width:1024px) and (min-height:768px)
+{
+	.portfolio-block-select {
+		width: 400px;
+		margin: 0 auto 60px;
+		&-option {
+			&,&-selected
+			{
+				font-size: var(--font-15);
+			}
+		}
+	}
+}

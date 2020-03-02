@@ -1,25 +1,25 @@
 .mainpage-portfolio {
 	.carousel-button-group-btn {
-		padding: 20px;
+		padding: 10px;
 		filter: invert(100%);
 	}
 	.react-multi-carousel {
 		&-list {
-			width: 100%;
 			height: 190px;
 		}
-		&-item,
-		&-item div {
+		&-item {
 			display: flex;
 			justify-content: center;
 		}
-		&-track,
-		&-item,
-		&-list div,
-		&-list svg {
-			height: 100%;
-		}
 	}
+	.portfolio-carousel-item {
+		display: flex;
+		justify-content: center;
+	}
+}
+.carousel-container {
+	width: 100%;
+
 }
 
 @media only screen and (min-height: 600px) {
@@ -38,6 +38,11 @@
 		.carousel-button-group-btn {
 			display: none;
 		}
+		.portfolio-carousel-item {
+			margin: 0 60px;
+		}
+		.carousel-container {
+			margin: auto 0;
 	}
 }
 
@@ -67,6 +72,12 @@
 }
 
 @media only screen and (min-width: 1366px) {
+	.mainpage-portfolio {
+		.portfolio-carousel-item {
+			margin: 0 120px;
+		}
+	}
+}
 	.mainpage-portfolio .react-multi-carousel {
 		&-track {
 			margin: 0 -80px;

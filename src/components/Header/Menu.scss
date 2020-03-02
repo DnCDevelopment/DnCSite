@@ -59,7 +59,7 @@
   {
     font-size: var(--font-100);  
     text-align: center;
-    background: linear-gradient(90deg, #009FE3 0%, #8F4AFF 100%);
+    background: var(--gradient-blue);
     background-clip: text;
     -webkit-text-fill-color: var(--transparent);
   }

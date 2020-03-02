@@ -40,7 +40,7 @@
 @media only screen and (min-width: 768px) {
 	.mainpage-service-block {
 		padding: 190px 50px 0;
-		background-image: url('../../assets/images/illustrations/mp-service-bg.svg');
+		background-image: var(--service-mainpage-bg);
 		background-repeat: repeat-y;
 		background-position-x: 50px;
 		background-size: 1020px;
