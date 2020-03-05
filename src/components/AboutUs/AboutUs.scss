@@ -97,7 +97,6 @@
 				font-size: var(--font-20);
 			}
 		}
-		
 	}
 }
 
@@ -122,7 +121,7 @@
 		}
 		.text-block {
 			z-index: 2;
-			width: 55%;
+			width: 100%;
 			padding: 25px 125px 25px 85px;
 			color: var(--primary-black-color);
 			background: var(--white-color);
@@ -149,7 +148,7 @@
 				font-style: normal;
 			}
 			article {
-				width: 70%;
+				width: 100%;
 				margin: 30px 0 20px;
 				font-size: var(--font-15);
 			}
@@ -198,7 +197,6 @@
 			min-height: 100%;
 			margin: 0;
 			padding: 0;
-
 		}
 		.text-block {
 			grid-row: 2;

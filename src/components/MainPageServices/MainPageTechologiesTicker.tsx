@@ -27,7 +27,7 @@ const TickerAnimation: () => void = () => {
 
 const MainPageTechnologiesTicker: React.FC<ITechnologiesData> = ({ technologies }): JSX.Element => {
   useEffect(() => {
-    TickerAnimation();
+    // TickerAnimation();
   }, []);
   return (
     <div className="techologies-ticker">

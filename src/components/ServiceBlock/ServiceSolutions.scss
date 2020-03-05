@@ -6,7 +6,7 @@
 	text-align: center;
 	background-color: var(--primary-black-color);
 	&-name {
-		font-weight: var(--weight-800);
+		font-weight: var(--weight-500);
 		font-size: var(--font-15);
 		font-family: var(--font-open-sans);
 		font-style: normal;
@@ -28,18 +28,15 @@
 	}
 }
 @media only screen and (min-width: 375px) {
-    .service-block-solution-description {
-        font-size: var(--font-15);
-
-    }
-
+	.service-block-solution-description {
+		font-size: var(--font-15);
+	}
 }
 
 @media only screen and (min-width: 375px) {
-    .service-block-solution {
-        padding: 25px;
-    }
-
+	.service-block-solution {
+		padding: 25px;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -51,24 +48,20 @@
 		&-name {
 			width: 37%;
 			margin-right: 2px;
-            padding: 30px 10px;
-			font-size: var(--font-25);
-            background-color: var(--primary-black-color);
-            &:hover
-            {
-                background:var(--gradient-tricolor);
-            }
+			padding: 30px 10px;
+			font-size: var(--font-22);
+			background-color: var(--primary-black-color);
 		}
+
 		&-description {
 			width: 63%;
 			max-height: none;
 			padding: 30px 30px;
 			text-align: justify;
-            background-color: var(--primary-black-color);
-            &:hover
-            {
-                background: var(--gradient-tricolor);
-            }
+			background-color: var(--primary-black-color);
+		}
+		&-name:hover + &-description {
+			background: var(--gradient-tricolor);
 		}
 		&:hover {
 			background: none;
