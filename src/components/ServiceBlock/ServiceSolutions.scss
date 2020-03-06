@@ -6,7 +6,7 @@
 	text-align: center;
 	background-color: var(--primary-black-color);
 	&-name {
-		font-weight: var(--weight-500);
+		font-weight: var(--weight-800);
 		font-size: var(--font-15);
 		font-family: var(--font-open-sans);
 		font-style: normal;
@@ -16,7 +16,7 @@
 		max-height: 0px;
 		margin-top: 0px;
 		overflow: hidden;
-		font-weight: var(--weight-bold);
+		font-weight: var(--weight-500);
 		font-size: var(--font-10);
 	}
 	&:hover {
