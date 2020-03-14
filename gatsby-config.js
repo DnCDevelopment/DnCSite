@@ -2,11 +2,11 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: 'NodeArt',
-    description: 'NodeArt',
-    siteUrl: 'https://nodeart.io',
+    title: 'DnCSite',
+    description: 'DnCSite',
+    siteUrl: 'http://dncapp.website/',
     author: {
-      name: '@Nodeart',
+      name: '@DnCDevelopment',
     },
   },
   plugins: [
@@ -22,6 +22,7 @@ module.exports = {
           'settings',
           'aboutus',
           'clients',
+          'seos',
           'abouttextblock',
           'mainpageservices',
           'mainpageportfolio',
