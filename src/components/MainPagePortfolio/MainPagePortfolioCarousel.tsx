@@ -43,8 +43,8 @@ const MainPagePortfolioCarousel: React.FC = (): JSX.Element => {
         customButtonGroup={<CarouselButtonGroup />}
         slidesToSlide={1}
         infinite
-        centerMode={window.innerWidth > 767}
-        renderButtonGroupOutside={window.innerWidth > 767}
+        centerMode={typeof window !== 'undefined' && window.innerWidth > 767}
+        renderButtonGroupOutside={typeof window !== 'undefined' && window.innerWidth > 767}
       >
         {portfolioItems.map(({ id, name, svg, rgba }) => (
           <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />

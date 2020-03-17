@@ -8,7 +8,7 @@ import ContactUs from '../components/ContactUs/ContactUs';
 import MainPageServicesBlock from '../components/MainPageServices/MainPageServicesBlock';
 import MainPagePortfolio from '../components/MainPagePortfolio/MainPagePortfolio';
 import SEO from '../components/SEO/SEO';
-import { IScrollCallbackArgs } from './CommonTypes';
+import { IScrollCallbackArgs } from '../Types/CommonTypes';
 
 const MAIN_SEO = graphql`
   query MainSeo {

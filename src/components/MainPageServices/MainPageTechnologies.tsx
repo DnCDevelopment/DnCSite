@@ -31,7 +31,7 @@ const MainPageTechnologies: React.FC = (): JSX.Element => {
 
   return (
     <div className="mainpage-technologies">
-      {window.innerWidth < 768 ? (
+      {typeof window !== 'undefined' && window.innerWidth < 768 ? (
         <MainPageTechnologiesCarousel technologies={[].concat(technologies)} />
       ) : (
         <MainPageTechologiesTicker technologies={[].concat(technologies)} />

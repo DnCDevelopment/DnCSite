@@ -53,17 +53,15 @@ const Team: React.FC = (): JSX.Element => {
     <div className="team">
       <h3 className="subtitle">Our Team</h3>
       <Carousel responsive={responsive} customButtonGroup={<CarouselButtonGroup />}>
-        {Array(4)
-          .fill(team[0])
-          .map(({ id, teammateName, position, description, picture }) => (
-            <Teammate
-              key={`${id}_${teammateName}`}
-              teammateName={teammateName}
-              position={position}
-              descritpion={description}
-              picture={picture}
-            />
-          ))}
+        {team.map(({ id, teammateName, position, description, picture }) => (
+          <Teammate
+            key={`${id}_${teammateName}`}
+            teammateName={teammateName}
+            position={position}
+            descritpion={description}
+            picture={picture}
+          />
+        ))}
       </Carousel>
       <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>
     </div>

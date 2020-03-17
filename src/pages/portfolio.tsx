@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Banner from '../components/Banner/Banner';
 import ContactUs from '../components/ContactUs/ContactUs';
 import nextBlock from '../components/Controls/nextBlockContext';
-import { IScrollCallbackArgs } from './CommonTypes';
+import { IScrollCallbackArgs } from '../Types/CommonTypes';
 import PortfolioBlock from '../components/Portfolio/PortfolioBlockTemp';
 import SEO from '../components/SEO/SEO';
 

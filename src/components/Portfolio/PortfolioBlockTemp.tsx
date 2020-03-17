@@ -49,13 +49,13 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
           customButtonGroup={<CarouselButtonGroup />}
           showDots
           renderDotsOutside
-          renderButtonGroupOutside={window.innerWidth > 1024}
+          renderButtonGroupOutside={typeof window !== 'undefined' && window.innerWidth > 1024}
           infinite
-          centerMode={window.innerWidth > 1365}
+          centerMode={typeof window !== 'undefined' && window.innerWidth > 1365}
         >
           {/* Повторяется пушо там надо минимум 6 елементов вроде что бы работало на десктопах */}
           {/* Тут начало */}
-          {window.innerWidth < 1024
+          {typeof window !== 'undefined' && window.innerWidth < 1024
             ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
             : visiblePortfolios
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
@@ -67,7 +67,7 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
                   </div>
                 ))}
           {/* Тут конец который ты должен пососать */}
-          {window.innerWidth < 1024
+          {typeof window !== 'undefined' && window.innerWidth < 1024
             ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
             : visiblePortfolios
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
@@ -78,7 +78,7 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
                     ))}
                   </div>
                 ))}
-          {window.innerWidth < 1024
+          {typeof window !== 'undefined' && window.innerWidth < 1024
             ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
             : visiblePortfolios
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))

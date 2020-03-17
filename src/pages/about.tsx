@@ -6,7 +6,7 @@ import AboutUsAdditional from '../components/AboutUs/AboutUsAdditional';
 import ContactUs from '../components/ContactUs/ContactUs';
 import DnCBanner from '../components/MainPageDnCBanner/DnCBanner';
 import nextBlock from '../components/Controls/nextBlockContext';
-import { IScrollCallbackArgs, ISEOQuery } from './CommonTypes';
+import { IScrollCallbackArgs, ISEOQuery } from '../Types/CommonTypes';
 import Team from '../components/Team/Team';
 import Clients from '../components/Clients/Clients';
 import SEO from '../components/SEO/SEO';

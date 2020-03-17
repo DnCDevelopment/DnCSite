@@ -48,7 +48,7 @@ const AboutUs: React.FC<IAboutUsComponent> = ({ additionalClass = 'main-page' })
       <div className="text-block">
         <h4>{subtitle}</h4>
         <h2>{title}</h2>
-        <article>{mainPageContent}</article>
+        <article dangerouslySetInnerHTML={{ __html: mainPageContent }} />
         {additionalClass === 'main-page' && <Link to={link}>{linkText}</Link>}
       </div>
       <div className="image-block">

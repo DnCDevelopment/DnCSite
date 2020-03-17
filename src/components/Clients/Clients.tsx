@@ -28,11 +28,9 @@ const Clients: React.FC = (): JSX.Element => {
         <span className="clients-header clients-header-blue">Клиенты</span>
       </h2>
       <div className="clients-container">
-        {Array(9)
-          .fill(clients[0])
-          .map(({ id, clientName, svg }) => (
-            <div key={`${id}_${clientName}`} className="clients-container-item" dangerouslySetInnerHTML={{ __html: svg }} />
-          ))}
+        {clients.map(({ id, clientName, svg }) => (
+          <div key={`${id}_${clientName}`} className="clients-container-item" dangerouslySetInnerHTML={{ __html: svg }} />
+        ))}
       </div>
       <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>
     </div>

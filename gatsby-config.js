@@ -109,6 +109,20 @@ module.exports = {
         },
       },
     },
+    /* eslint-disable */
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#000000',
+        theme_color: '#000000',
+        display: 'minimal-ui',
+        icon: 'src/assets/images/illustrations/favicon.png',
+      },
+    },
+    /* eslint-enable */
     'gatsby-plugin-sass',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',

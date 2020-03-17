@@ -5,7 +5,7 @@ import Banner from '../components/Banner/Banner';
 import ContactUs from '../components/ContactUs/ContactUs';
 import nextBlock from '../components/Controls/nextBlockContext';
 import SEO from '../components/SEO/SEO';
-import { IScrollCallbackArgs } from './CommonTypes';
+import { IScrollCallbackArgs } from '../Types/CommonTypes';
 import ContactAddress from '../components/ContactUs/ContactAddress';
 
 const CONTACTS_SEO = graphql`

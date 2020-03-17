@@ -26,7 +26,7 @@ const AboutUsAdditional: React.FC = (): JSX.Element => {
       {textBlocks.map(({ id, title, text }) => (
         <div key={`${id}_${title}`} className="about-text-block">
           <h3 className="about-text-block-header">{title}</h3>
-          <p className="about-text-block-text">{text}</p>
+          <p className="about-text-block-text" dangerouslySetInnerHTML={{ __html: text }} />
         </div>
       ))}
       <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>
