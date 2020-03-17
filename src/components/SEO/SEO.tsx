@@ -71,8 +71,8 @@ const SEO: React.FC = ({
         telephone: '(097) 097-88-88',
         logo: {
           '@type': 'ImageObject',
-          url: logo,
-          contentUrl: logo,
+          url: siteUrl,
+          contentUrl: siteUrl,
           width: 408,
           height: 51,
         },
@@ -82,7 +82,7 @@ const SEO: React.FC = ({
       alternateName: titleProp,
       image: {
         '@type': 'ImageObject',
-        url: image,
+        url: siteUrl,
       },
     },
   ];
