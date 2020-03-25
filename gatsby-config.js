@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'DnCSite',
     description: 'DnCSite',
-    siteUrl: 'https://dnc.it.ua/',
+    siteUrl: 'https://dnc.lt.ua/',
     author: {
       name: '@DnCDevelopment',
     },
@@ -73,12 +73,6 @@ module.exports = {
               url: siteUrl + path,
               changefreq: 'daily',
               priority: 0.7,
-              links: [
-                {
-                  lang: 'ru',
-                  url: `${siteUrl}/`,
-                },
-              ],
             };
             return res;
           });
