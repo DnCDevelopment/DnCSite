@@ -1,64 +1,55 @@
-.mainpage-portfolio
-{
-    position: relative;
+.mainpage-portfolio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--primary-black-color);
+  &-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
+    align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    padding-top: 205px;
-    overflow: hidden;
-    background-color: var(--primary-black-color);
-    &-header
-    {
-        
-        position: absolute;
-        top: 190px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        color: var(--primary-purple-color);
-        font-weight: var(--weight-bold);
-        font-size: var(--font-200);
-        font-style: normal;
-        &-pf
-        {
-            display: block;
-        }
-        &-portfolio
-        {
-            display: none;
-        }
+    color: var(--primary-purple-color);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-200);
+    font-style: normal;
+    &-pf {
+      display: block;
     }
+    &-portfolio {
+      display: none;
+    }
+  }
 }
 
-@media only screen and (min-width:768px)
-{
-    .mainpage-portfolio
-    {
-        align-self: center;
-        padding-top: 0;
-        background-image: var(--portfolio-mainpage-bg);
+@media only screen and (min-width: 768px) {
+  .mainpage-portfolio {
+    align-self: center;
+    padding-top: 0;
+    background-image: var(--portfolio-mainpage-bg);
 
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    
-        &-header
-        {
-            top: 0;
-            align-items: center;
-            font-size: var(--font-250);
-            text-transform: uppercase;
-            &-pf
-            {
-                display: none;
-            }
-            &-portfolio
-            {
-                display: block;
-            }
-        }
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    &-header {
+      top: 0;
+      align-items: center;
+      font-size: var(--font-250);
+      text-transform: uppercase;
+      &-pf {
+        display: none;
+      }
+      &-portfolio {
+        display: block;
+      }
     }
+  }
 }

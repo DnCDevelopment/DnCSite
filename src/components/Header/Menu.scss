@@ -7,6 +7,7 @@
   width: 30px;
   height: 30px;
   -webkit-tap-highlight-color: var(--transparent);
+  cursor: pointer;
 
   &:after,
   &:before {
@@ -26,20 +27,26 @@
 
 .header-menu {
   position: fixed;
-  top:-100%;
+  top: -100%;
   right: 0;
   left: 0;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 220px 40px;
   background-color: var(--primary-black-color);
   transition: var(--top-07-transition) ease-in-out;
 
   &-link {
+    display: block;
+    margin-bottom: 5px;
     color: var(--white-color);
+    font-weight: var(--weight-800);
     font-size: var(--font-30);
-    font-family: --var(--font-open-sans);
+    font-family: var(--font-open-sans);
     font-style: normal;
     text-transform: uppercase;
     text-decoration: none;
@@ -54,10 +61,11 @@
   &-open {
     top: 0;
   }
-  
-  h2 
-  {
-    font-size: var(--font-100);  
+
+  h2 {
+    width: min-content;
+    margin: 0 auto;
+    font-size: var(--font-100);
     text-align: center;
     background: var(--gradient-blue);
     background-clip: text;
@@ -65,36 +73,63 @@
   }
 }
 
+@media only screen and (min-height: 660px) {
+  .header-menu {
+    &-link {
+      margin-bottom: 10px;
+      font-size: var(--font-35);
+    }
+  }
+}
+@media only screen and (min-height: 700px) {
+  .header-menu-link {
+    margin-bottom: 15px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .header-menu {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 220px;
+    h2 {
+      font-size: var(--font-250);
+    }
     &-link {
-      color: var(--primary-color);
-      text-transform: uppercase;
-      opacity: 0.8;
-
-      &:hover {
-        opacity: 1;
-        transition: opacity 0.25s ease-in-out;
-      }
+      margin-bottom: 0;
+      padding: 0 40px;
+      font-size: var(--font-30);
+      line-height: var(--font-30);
     }
 
     &-list {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      width: 100%;
       margin-top: 0;
-
       & li {
-        margin: 0 10px;
+        border-right: 1px solid var(--white-color);
+        &:last-of-type {
+          border: none;
+        }
       }
+    }
 
-      &:first-child {
-        margin-left: 30px;
-      }
+    &:first-child {
+      margin-left: 30px;
     }
   }
 
   .menu {
     display: flex;
     height: auto;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .header-menu-link {
+    font-size: var(--font-40);
+    line-height: var(--font-40);
   }
 }

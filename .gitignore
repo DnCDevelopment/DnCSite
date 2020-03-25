@@ -5,6 +5,10 @@
 # Build directory
 public/
 
+#firebase cache
+
+.firebase/
+
 # Gatsby cache
 .cache/
 

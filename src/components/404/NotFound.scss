@@ -1,0 +1,104 @@
+.notfound {
+  &-page {
+    .subtitle {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--red-color);
+    font-size: var(--font-100);
+    line-height: var(--font-70);
+    text-align: center;
+    text-transform: uppercase;
+    &-error {
+      color: var(--white-color);
+      font-size: var(--font-30);
+    }
+  }
+  &-link {
+    margin-top: 70px;
+    color: var(--white-color);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-15);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (min-height: 650px) {
+  .notfound {
+    &-header {
+      font-size: var(--font-150);
+      line-height: var(--font-100);
+      &-error {
+        font-size: var(--font-50);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .notfound {
+    &-page {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+
+      padding: 205px 50px 90px;
+      .subtitle {
+        display: flex;
+      }
+    }
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      height: 85%;
+    }
+    &-header {
+      width: min-content;
+      margin: 0 auto;
+      font-size: var(--font-200);
+      line-height: var(--font-100);
+      text-align: right;
+      &-error {
+        margin-top: 10px;
+      }
+    }
+    &-link {
+      font-size: var(--font-20);
+    }
+  }
+}
+@media only screen and (min-width: 900px) {
+  .notfound {
+    &-page {
+      padding: 205px 90px 90px;
+    }
+    &-header {
+      width: min-content;
+      margin: 0 auto;
+      font-size: var(--font-250);
+      line-height: var(--font-100);
+      text-align: right;
+      &-error {
+        margin-top: 20px;
+      }
+    }
+  }
+}

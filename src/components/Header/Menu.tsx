@@ -28,7 +28,7 @@ const Menu: React.FC<IMenuProps> = ({ isMenuOpen, menuOpen }): JSX.Element => {
         <ul className="header-menu-list">
           {menu.map(
             ({ link, title }: IMenu): JSX.Element => (
-              <li onClick={isMenuOpen ? menuOpen : undefined} key={link}>
+              <li с onClick={isMenuOpen ? menuOpen : undefined} key={link}>
                 <Link className="header-menu-link" to={link}>
                   {title}
                 </Link>

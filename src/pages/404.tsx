@@ -1,9 +1,6 @@
-import * as React from 'react';
+import React from 'react';
+import NotFound from '../components/404/NotFound';
 
-const NotFoundPage = () => (
-  <>
-    <h1>404: Page not found.</h1>
-  </>
-);
+const NotFoundPage = () => <NotFound />;
 
 export default NotFoundPage;

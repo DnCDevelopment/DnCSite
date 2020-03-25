@@ -2,11 +2,11 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: 'NodeArt',
-    description: 'NodeArt',
-    siteUrl: 'https://nodeart.io',
+    title: 'DnCSite',
+    description: 'DnCSite',
+    siteUrl: 'https://dnc.lt.ua/',
     author: {
-      name: '@Nodeart',
+      name: '@DnCDevelopment',
     },
   },
   plugins: [
@@ -16,12 +16,17 @@ module.exports = {
         apiURL: 'http://46.101.116.184:1337',
         queryLimit: 1000,
         contentTypes: [
+          'adressdata',
           'menu',
           'socialicon',
           'settings',
           'aboutus',
+          'clients',
+          'seos',
+          'abouttextblock',
           'mainpageservices',
           'mainpageportfolio',
+          'pool',
           'portfolio',
           'portfoliotypes',
           'services',
@@ -31,10 +36,46 @@ module.exports = {
           'contactsblock',
           'contactform',
           'technology',
+          'team',
         ],
         loginData: {
           identifier: process.env.LOGIN,
           password: process.env.PASSWORD,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata { siteUrl }
+            }
+            allSitePage {
+              edges {
+                node {
+                  path
+                  
+                }
+              }
+            }
+          }
+        `,
+        serialize: ({
+          site: {
+            siteMetadata: { siteUrl },
+          },
+          allSitePage,
+        }) => {
+          return allSitePage.edges.map(({ node: { path } }) => {
+            const res = {
+              url: siteUrl + path,
+              changefreq: 'daily',
+              priority: 0.7,
+            };
+            return res;
+          });
         },
       },
     },
@@ -103,6 +144,20 @@ module.exports = {
         },
       },
     },
+    /* eslint-disable */
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#000000',
+        theme_color: '#000000',
+        display: 'minimal-ui',
+        icon: 'src/assets/images/illustrations/favicon.png',
+      },
+    },
+    /* eslint-enable */
     'gatsby-plugin-sass',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Carousel from 'react-multi-carousel';
 import PortfolioCarouselItem from './PortfolioCarouselItem';
 import CarouselButtonGroup from '../Controls/CarouselButtonGroup';
-import { IPortfolioData } from '../../Types/CommonTypes.ts';
+import { IPortfolioCarousel } from '../../Types/CommonTypes';
 import './PortfolioBlockTemp.scss';
 
 const PORTFOLIO_QUERY_TEMP = graphql`
@@ -14,6 +14,7 @@ const PORTFOLIO_QUERY_TEMP = graphql`
         name
         svg
         rgba
+        link
       }
     }
   }
@@ -22,7 +23,7 @@ const PORTFOLIO_QUERY_TEMP = graphql`
 const PortfolioBlock: React.FC = (): JSX.Element => {
   const {
     data: { portfolioItems: visiblePortfolios },
-  }: IPortfolioData = useStaticQuery(PORTFOLIO_QUERY_TEMP);
+  }: IPortfolioCarousel = useStaticQuery(PORTFOLIO_QUERY_TEMP);
 
   const responsive = {
     desctop: {
@@ -49,43 +50,49 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
           customButtonGroup={<CarouselButtonGroup />}
           showDots
           renderDotsOutside
-          renderButtonGroupOutside={window.innerWidth > 1024}
+          renderButtonGroupOutside={typeof window !== 'undefined' && window.innerWidth > 1024}
           infinite
-          centerMode={window.innerWidth > 1365}
+          centerMode={typeof window !== 'undefined' && window.innerWidth > 1365}
         >
           {/* Повторяется пушо там надо минимум 6 елементов вроде что бы работало на десктопах */}
           {/* Тут начало */}
-          {window.innerWidth < 1024
-            ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
+          {typeof window !== 'undefined' && window.innerWidth < 1024
+            ? visiblePortfolios.map(({ id, name, rgba, svg, link }) => (
+                <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
+              ))
             : visiblePortfolios
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
                 .map(el => (
                   <div className="carousel-column">
-                    {el.map(({ id, name, rgba, svg }) => (
-                      <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
+                    {el.map(({ id, name, rgba, svg, link }) => (
+                      <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
                     ))}
                   </div>
                 ))}
           {/* Тут конец который ты должен пососать */}
-          {window.innerWidth < 1024
-            ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
+          {typeof window !== 'undefined' && window.innerWidth < 1024
+            ? visiblePortfolios.map(({ id, name, rgba, svg, link }) => (
+                <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
+              ))
             : visiblePortfolios
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
                 .map(el => (
                   <div className="carousel-column">
-                    {el.map(({ id, name, rgba, svg }) => (
-                      <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
+                    {el.map(({ id, name, rgba, svg, link }) => (
+                      <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
                     ))}
                   </div>
                 ))}
-          {window.innerWidth < 1024
-            ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
+          {typeof window !== 'undefined' && window.innerWidth < 1024
+            ? visiblePortfolios.map(({ id, name, rgba, svg, link }) => (
+                <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
+              ))
             : visiblePortfolios
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
                 .map(el => (
                   <div className="carousel-column">
-                    {el.map(({ id, name, rgba, svg }) => (
-                      <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
+                    {el.map(({ id, name, rgba, svg, link }) => (
+                      <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
                     ))}
                   </div>
                 ))}
