@@ -31,13 +31,18 @@
   right: 0;
   left: 0;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 165px 40px;
   background-color: var(--primary-black-color);
   transition: var(--top-07-transition) ease-in-out;
 
   &-link {
+    display: block;
+    margin-bottom: 5px;
     color: var(--white-color);
     font-weight: var(--weight-800);
     font-size: var(--font-30);
@@ -70,7 +75,15 @@
 
 @media only screen and (min-height: 660px) {
   .header-menu {
-    padding-top: 220px;
+    &-link {
+      margin-bottom: 10px;
+      font-size: var(--font-35);
+    }
+  }
+}
+@media only screen and (min-height: 700px) {
+  .header-menu-link {
+    margin-bottom: 15px;
   }
 }
 
@@ -84,6 +97,8 @@
       font-size: var(--font-250);
     }
     &-link {
+      margin-bottom: 0;
+      padding: 0 40px;
       font-size: var(--font-30);
       line-height: var(--font-30);
     }

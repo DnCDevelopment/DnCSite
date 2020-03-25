@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'DnCSite',
     description: 'DnCSite',
-    siteUrl: 'http://dncapp.website/',
+    siteUrl: 'https://dnc.it.ua/',
     author: {
       name: '@DnCDevelopment',
     },
@@ -41,6 +41,47 @@ module.exports = {
         loginData: {
           identifier: process.env.LOGIN,
           password: process.env.PASSWORD,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata { siteUrl }
+            }
+            allSitePage {
+              edges {
+                node {
+                  path
+                  
+                }
+              }
+            }
+          }
+        `,
+        serialize: ({
+          site: {
+            siteMetadata: { siteUrl },
+          },
+          allSitePage,
+        }) => {
+          return allSitePage.edges.map(({ node: { path } }) => {
+            const res = {
+              url: siteUrl + path,
+              changefreq: 'daily',
+              priority: 0.7,
+              links: [
+                {
+                  lang: 'ru',
+                  url: `${siteUrl}/`,
+                },
+              ],
+            };
+            return res;
+          });
         },
       },
     },

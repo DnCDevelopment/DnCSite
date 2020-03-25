@@ -1,53 +1,59 @@
 .techologies-ticker {
-	position: relative;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	height: 100%;
-	&-item {
-		position: absolute;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 50px;
-		height: 50px;
-		padding: 5px;
-		background: var(--white-color);
+  &-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px !important;
+    padding: 5px;
+    background: var(--white-color);
 
-		border-radius: 100%;
-		box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
-		animation: 2s ease-in-out 0s infinite reverse UpAndDown;
-		&-md {
-			width: 75px;
-			height: 75px;
-			animation-duration: 2.5s;
-			animation-direction: normal;
-		}
+    border-radius: 100%;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    animation: 2s ease-in-out 0s infinite reverse UpAndDown;
+    &-md {
+      width: 75px;
+      height: 75px !important;
+      animation-duration: 2.5s;
+      animation-direction: normal;
+    }
 
-		&-bg {
-			width: 100px;
-			height: 100px;
-			animation-duration: 3s;
-			animation-direction: reverse;
-		}
-		svg {
-			max-width: 100%;
-			max-height: 100%;
-		}
-	}
+    &-bg {
+      width: 100px;
+      height: 100px !important;
+      animation-duration: 3s;
+      animation-direction: reverse;
+    }
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
 }
 
 @keyframes UpAndDown {
-	0% {
-		transform: translateY(0px);
-	}
-	33% {
-		transform: translateY(20px);
-	}
-	66% {
-		transform: translateY(-20px);
-	}
-	100% {
-		transform: translateY(0);
-	}
+  0% {
+    transform: translateY(0px);
+  }
+  33% {
+    transform: translateY(20px);
+  }
+  66% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mainpage-service-block .react-multi-carousel-list {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
 }

@@ -10,6 +10,8 @@ import MainPagePortfolio from '../components/MainPagePortfolio/MainPagePortfolio
 import SEO from '../components/SEO/SEO';
 import { IScrollCallbackArgs } from '../Types/CommonTypes';
 
+const COMPONENTS = [<DnCBanner />, <AboutUs />, <MainPageServicesBlock />, <MainPagePortfolio />, <ContactUs />];
+
 const MAIN_SEO = graphql`
   query MainSeo {
     strapiSeos(strapiId: { eq: 1 }) {
@@ -53,21 +55,11 @@ const IndexPage: React.FC = (): JSX.Element => {
       <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>
-          <Section>
-            <DnCBanner />
-          </Section>
-          <Section>
-            <AboutUs />
-          </Section>
-          <Section>
-            <MainPageServicesBlock />
-          </Section>
-          <Section>
-            <MainPagePortfolio />
-          </Section>
-          <Section>
-            <ContactUs />
-          </Section>
+          {/* eslint-disable */}
+          {COMPONENTS.map((component, idx) => (
+            <Section key={idx}>{component}</Section>
+          ))}
+          {/* eslint-enable */}
         </SectionsContainer>
       </nextBlock.Provider>
     </>

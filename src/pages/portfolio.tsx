@@ -8,6 +8,8 @@ import { IScrollCallbackArgs } from '../Types/CommonTypes';
 import PortfolioBlock from '../components/Portfolio/PortfolioBlockTemp';
 import SEO from '../components/SEO/SEO';
 
+const COMPONENTS = [<Banner title="Портфолио" />, <PortfolioBlock />, <ContactUs />];
+
 const PORTFOLIO_SEO = graphql`
   query PortfolioSeo {
     strapiSeos(strapiId: { eq: 4 }) {
@@ -47,15 +49,11 @@ const IndexPage: React.FC = (): JSX.Element => {
       <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>
-          <Section>
-            <Banner title="Портфолио" />
-          </Section>
-          <Section>
-            <PortfolioBlock />
-          </Section>
-          <Section>
-            <ContactUs />
-          </Section>
+          {/* eslint-disable */}
+          {COMPONENTS.map((component, idx) => (
+            <Section key={idx}>{component}</Section>
+          ))}
+          {/* eslint-enable */}
         </SectionsContainer>
       </nextBlock.Provider>
     </>

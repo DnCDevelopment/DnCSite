@@ -30,7 +30,7 @@ const MainPageTechnologiesTicker: React.FC<ITechnologiesData> = ({ technologies 
     TickerAnimation();
   }, []);
   return (
-    <div className="techologies-ticker">
+    <div className="react-multi-carousel-list">
       {technologies.map(({ technology: { id, name, svg, x, y, viewSize } }) => (
         <div
           key={`${id}_${name}`}

@@ -4,12 +4,21 @@ import { graphql, useStaticQuery } from 'gatsby';
 import AboutUs from '../components/AboutUs/AboutUs';
 import AboutUsAdditional from '../components/AboutUs/AboutUsAdditional';
 import ContactUs from '../components/ContactUs/ContactUs';
-import DnCBanner from '../components/MainPageDnCBanner/DnCBanner';
+import Banner from '../components/Banner/Banner';
 import nextBlock from '../components/Controls/nextBlockContext';
 import { IScrollCallbackArgs, ISEOQuery } from '../Types/CommonTypes';
 import Team from '../components/Team/Team';
 import Clients from '../components/Clients/Clients';
 import SEO from '../components/SEO/SEO';
+
+const COMPONENTS: JSX.Element[] = [
+  <Banner title="О нас" />,
+  <AboutUs additionalClass="about-page" />,
+  <AboutUsAdditional />,
+  <Team />,
+  <Clients />,
+  <ContactUs />,
+];
 
 const ABOUT_SEO = graphql`
   query AboutSeo {
@@ -50,24 +59,11 @@ const IndexPage: React.FC = (): JSX.Element => {
       <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>
-          <Section>
-            <DnCBanner />
-          </Section>
-          <Section>
-            <AboutUs additionalClass="about-page" />
-          </Section>
-          <Section>
-            <AboutUsAdditional />
-          </Section>
-          <Section>
-            <Team />
-          </Section>
-          <Section>
-            <Clients />
-          </Section>
-          <Section>
-            <ContactUs />
-          </Section>
+          {/* eslint-disable */}
+          {COMPONENTS.map((component, idx) => (
+            <Section key={idx}>{component}</Section>
+          ))}
+          {/* eslint-enable */}
         </SectionsContainer>
       </nextBlock.Provider>
     </>

@@ -31,6 +31,7 @@ export interface IPortfolio {
   name?: string;
   svg: string;
   rgba: string;
+  link?: string | undefined;
 }
 
 export interface IPortfolioCarousel {

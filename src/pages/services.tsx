@@ -8,6 +8,8 @@ import nextBlock from '../components/Controls/nextBlockContext';
 import { IScrollCallbackArgs } from '../Types/CommonTypes';
 import SEO from '../components/SEO/SEO';
 
+const COMPONENTS = [<Banner title="Услуги" />, <ServiceBlock />, <ContactUs />];
+
 const SERVICES_SEO = graphql`
   query ServicesSeo {
     strapiSeos(strapiId: { eq: 3 }) {
@@ -47,15 +49,11 @@ const IndexPage: React.FC = (): JSX.Element => {
       <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>
-          <Section>
-            <Banner title="Услуги" />
-          </Section>
-          <Section>
-            <ServiceBlock />
-          </Section>
-          <Section>
-            <ContactUs />
-          </Section>
+          {/* eslint-disable */}
+          {COMPONENTS.map((component, idx) => (
+            <Section key={idx}>{component}</Section>
+          ))}
+          {/* eslint-enable */}
         </SectionsContainer>
       </nextBlock.Provider>
     </>

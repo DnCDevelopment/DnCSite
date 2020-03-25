@@ -1,5 +1,6 @@
 .logo-container {
   z-index: 20;
+  display: none;
   width: 75px;
   height: 75px;
   & img {
@@ -9,16 +10,14 @@
 }
 
 @media only screen and (min-height: 660px) {
-  .logo-container 
-  {
+  .logo-container {
     margin-top: 45px;
   }
 }
 
-
-
 @media only screen and (min-width: 768px) {
   .logo-container {
+    display: block;
     min-width: 100px;
     margin-top: 0;
     padding-top: 0;

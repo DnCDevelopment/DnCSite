@@ -14,6 +14,7 @@ const PORTFOLIO_CAROUSEL_QUERY = graphql`
         name
         svg
         rgba
+        link
       }
     }
   }
@@ -44,10 +45,10 @@ const MainPagePortfolioCarousel: React.FC = (): JSX.Element => {
         removeArrowOnDeviceType={['laptop', 'mobile']}
         slidesToSlide={1}
         infinite
-        centerMode={window.innerWidth > 767}
+        centerMode={typeof window !== 'undefined' && window.innerWidth > 767}
       >
-        {portfolioItems.map(({ id, name, svg, rgba }) => (
-          <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
+        {portfolioItems.map(({ id, name, svg, rgba, link }) => (
+          <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
         ))}
       </Carousel>
     </div>
