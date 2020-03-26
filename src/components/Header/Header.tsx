@@ -17,7 +17,7 @@ const Header: React.FC = (): JSX.Element => {
   return (
     <header>
       <OpenBtn menuOpen={menuOpen} />
-      <Logo />
+      {typeof window !== 'undefined' && window.innerWidth > 768 && <Logo />}
       <div className="placeholder-div" />
       <Menu isMenuOpen={isMenuOpen} menuOpen={menuOpen} />
     </header>
