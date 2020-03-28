@@ -29,6 +29,9 @@
 @media only screen and (min-width: 1366px) {
   .react-multi-carousel-list .team-member {
     width: 240px;
+    &-picture {
+      height: 240px;
+    }
     &-name,
     &-position {
       font-size: var(--font-20);
