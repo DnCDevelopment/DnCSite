@@ -45,7 +45,7 @@ const Team: React.FC = (): JSX.Element => {
     },
     laptop: {
       breakpoint: { max: 4096, min: 1024 },
-      items: 4,
+      items: 3,
     },
   };
 
