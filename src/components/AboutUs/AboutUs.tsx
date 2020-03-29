@@ -51,9 +51,7 @@ const AboutUs: React.FC<IAboutUsComponent> = ({ additionalClass = 'main-page' })
         <article dangerouslySetInnerHTML={{ __html: mainPageContent }} />
         {additionalClass === 'main-page' && <Link to={link}>{linkText}</Link>}
       </div>
-      <div className="image-block">
-        <img src={src} alt={alt} />
-      </div>
+      <div className="image-block" style={{ backgroundImage: `url(${src})` }} />
       {additionalClass === 'main-page' && <Link to={link}>{linkText}</Link>}
       <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>
     </div>
