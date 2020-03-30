@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
@@ -33,10 +32,8 @@ exports.sendMail = functions.https.onRequest((req, res) => {
 
   mailTransport.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error(error.message);
       return res.status(500).send(JSON.stringify({ error: error.message }));
     }
-    console.log('Message sent to:', info.envelope.to);
     return res.status(200).send(info.envelope.to);
   });
 });
