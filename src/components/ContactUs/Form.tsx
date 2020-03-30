@@ -28,29 +28,29 @@ const Form: React.FC<IForm> = ({ poolChoice }): JSX.Element => {
 
   const handleSubmit = (e: React.MouseEvent) => {
     /* eslint-disable */
-    name.length > 2 &&
-    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) &&
-    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)
-      ? (async () => {
-          const body = {
-            name: name,
-            phone: tel,
-            mail: mail,
-          };
-          if (poolChoice !== '') body.poolChoice = poolChoice;
+    if (
+      name.length > 2 &&
+      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) &&
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)
+    ) {
+      const body = {
+        name: name,
+        phone: tel,
+        mail: mail,
+      };
+      if (poolChoice !== '') body.poolChoice = poolChoice;
 
-          const response = await fetch('/api/sendMail', {
-            method: 'POST',
-            body: JSON.stringify(body),
-          });
-        })()
-      : (() => {
-          let tmp = [];
-          if (name.length < 2) tmp.push(name);
-          if (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) === false) tmp.push(tel);
-          if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail) === false) tmp.push(mail);
-          changeErrFields(tmp);
-        })();
+      const response = fetch('/api/sendMail', {
+        method: 'POST',
+        body: JSON.stringify(body),
+      });
+    } else {
+      let tmp = [];
+      if (name.length < 2) tmp.push(name);
+      if (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) === false) tmp.push(tel);
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail) === false) tmp.push(mail);
+      changeErrFields(tmp);
+    }
     /* eslint-enable */
 
     e.preventDefault();

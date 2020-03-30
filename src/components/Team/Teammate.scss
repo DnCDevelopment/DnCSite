@@ -28,16 +28,16 @@
 
 @media only screen and (min-width: 1366px) {
   .react-multi-carousel-list .team-member {
-    width: 240px;
+    width: 200px;
     &-picture {
-      height: 240px;
+      height: 200px;
     }
     &-name,
     &-position {
-      font-size: var(--font-20);
+      font-size: var(--font-15);
     }
     &-description {
-      font-size: var(--font-15);
+      font-size: var(--font-10);
     }
   }
 }

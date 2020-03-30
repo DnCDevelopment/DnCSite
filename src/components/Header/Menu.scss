@@ -48,6 +48,7 @@
     font-size: var(--font-30);
     font-family: var(--font-open-sans);
     font-style: normal;
+    white-space: nowrap;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -126,6 +127,13 @@
 }
 
 @media only screen and (min-width: 1300px) {
+  .header-menu-link {
+    font-size: var(--font-35);
+    line-height: var(--font-35);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
   .header-menu-link {
     font-size: var(--font-40);
     line-height: var(--font-40);
