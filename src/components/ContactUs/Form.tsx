@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Form.scss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { IFormData } from './CommonTypes';
+import { IForm, IFormData } from './CommonTypes';
 
 const FORM_QUERY = graphql`
   query FormQuery {
@@ -16,7 +16,7 @@ const FORM_QUERY = graphql`
   }
 `;
 
-const Form: React.FC = (): JSX.Element => {
+const Form: React.FC<IForm> = ({ poolChoice }): JSX.Element => {
   const {
     strapiContactform: { titile, blueTitle, namePlaceholder, telPlaceholder, mailPlaceholder, sendTitle },
   }: IFormData = useStaticQuery(FORM_QUERY);
@@ -31,11 +31,19 @@ const Form: React.FC = (): JSX.Element => {
     name.length > 2 &&
     /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) &&
     /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)
-      ? () => {
-          changeName('');
-          changeName('');
-          changeName('');
-        }
+      ? (async () => {
+          const body = {
+            name: name,
+            phone: tel,
+            mail: mail,
+          };
+          if (poolChoice !== '') body.poolChoice = poolChoice;
+
+          const response = await fetch('/api/sendMail', {
+            method: 'POST',
+            body: JSON.stringify(body),
+          });
+        })()
       : (() => {
           let tmp = [];
           if (name.length < 2) tmp.push(name);

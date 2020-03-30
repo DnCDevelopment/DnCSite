@@ -8,16 +8,16 @@ import Banner from '../components/Banner/Banner';
 import nextBlock from '../components/Controls/nextBlockContext';
 import { IScrollCallbackArgs, ISEOQuery } from '../Types/CommonTypes';
 import Team from '../components/Team/Team';
-import Clients from '../components/Clients/Clients';
-import SEO from '../components/SEO/SEO';
+/* import Clients from '../components/Clients/Clients';
+ */ import SEO from '../components/SEO/SEO';
 
 const COMPONENTS: JSX.Element[] = [
   <Banner title="О нас" />,
   <AboutUs additionalClass="about-page" />,
   <AboutUsAdditional />,
   <Team />,
-  <Clients />,
-  <ContactUs />,
+  /*   <Clients />,
+   */ <ContactUs />,
 ];
 
 const ABOUT_SEO = graphql`

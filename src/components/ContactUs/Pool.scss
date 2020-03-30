@@ -19,6 +19,11 @@
       text-transform: uppercase;
       border: 1px solid var(--white-color);
       cursor: pointer;
+      transition: var(--bg-02-transition), var(--color-02-transition);
+      &-selected {
+        color: var(--primary-black-color);
+        background-color: var(--white-color);
+      }
     }
   }
 }

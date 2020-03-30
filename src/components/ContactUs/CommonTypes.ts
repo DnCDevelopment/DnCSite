@@ -46,3 +46,12 @@ export interface IPoolVariant {
   id: string | number;
   title: string;
 }
+
+export interface IPool {
+  poolChoice: string;
+  changeChoice: (string) => void;
+}
+
+export interface IForm {
+  poolChoice?: string;
+}
