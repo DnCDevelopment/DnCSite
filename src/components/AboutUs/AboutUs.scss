@@ -47,18 +47,9 @@
     margin: 40px 0;
     padding: 15px 15px 15px 15px;
     background: var(--black-color);
-    &:before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: attr(bg-img url);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      content: '';
-    }
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
   }
   &.main-page {
     .image-block {
