@@ -4,8 +4,8 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "/checkMail",
-        "function": "checkMail"
+        "source": "/api/sendMail",
+        "function": "sendMail"
       }
     ],
     "headers": [
