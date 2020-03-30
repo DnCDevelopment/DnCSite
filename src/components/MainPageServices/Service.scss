@@ -1,225 +1,204 @@
 .service-item {
-	color: var(--primary-black-color);
-	h3 {
-		margin-bottom: 10px;
-		font-weight: var(--weight-bold);
-		font-size: var(--font-20);
-		font-style: normal;
-	}
+  color: var(--primary-black-color);
+  h3 {
+    margin-bottom: 10px;
+    font-weight: var(--weight-bold);
+    font-size: var(--font-20);
+    font-style: normal;
+  }
+  a {
+    color: var(--primary-black-color);
+    text-decoration: none;
+  }
 
-	ol {
-		margin-bottom: 10px;
-		list-style-type: none;
-		li {
-			display: flex;
-			align-items: center;
-			font-weight: var(--weight-normal);
-			font-size: var(--font-15);
-			font-style: normal;
-			line-height: 20px;
-			&::before {
-				display: block;
-				width: 20px;
-				height: 1px;
-				margin-right: 10px;
-				background-color: var(--primary-black-color);
-				content: '';
-			}
-		}
-	}
+  ol {
+    margin-bottom: 10px;
+    list-style-type: none;
+    li {
+      display: flex;
+      align-items: center;
+      font-weight: var(--weight-normal);
+      font-size: var(--font-15);
+      font-style: normal;
+      line-height: 20px;
+      &::before {
+        display: block;
+        width: 20px;
+        height: 1px;
+        margin-right: 10px;
+        background-color: var(--primary-black-color);
+        content: '';
+      }
+    }
+  }
 
-	&-number {
-		display: none;
-	}
+  &-number {
+    display: none;
+  }
 }
 
 @media only screen and (min-height: 700px) {
-	.service-item {
-		color: var(--primary-black-color);
-		h3 {
-			margin-bottom: 20px;
-			font-size: var(--font-20);
-		}
-		ol {
-			margin-bottom: 20px;
-		}
-	}
+  .service-item {
+    color: var(--primary-black-color);
+    h3 {
+      margin-bottom: 20px;
+      font-size: var(--font-20);
+    }
+    ol {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 @media only screen and (min-height: 760px) {
-	.service-item ol li 
-	{
-		margin-bottom: 5px;
-	}
+  .service-item ol li {
+    margin-bottom: 5px;
+  }
 }
 
-
 @media only screen and (min-width: 768px) {
-	.service-item {
-		position: relative;
-		margin-right: 42px; /*Даня иди нахуй*/
+  .service-item {
+    position: relative;
+    margin-right: 42px; /*Даня иди нахуй*/
 
-		padding-bottom: 15px;
-		h3 {
-			margin-bottom: 30px;
-			font-size: var(--font-30);
-			line-height: 25px;
-			white-space: nowrap;
-		}
-		ol {
-            padding-bottom: 30px;
-			li {
-				font-size: var(--font-15);
-				&::before {
-					content: none;
-				}
-			}
-		}
+    padding-bottom: 15px;
+    h3 {
+      margin-bottom: 30px;
+      font-size: var(--font-30);
+      line-height: 25px;
+      white-space: nowrap;
+    }
+    ol {
+      padding-bottom: 30px;
+      li {
+        font-size: var(--font-15);
+        &::before {
+          content: none;
+        }
+      }
+    }
 
-		&-number {
-			position: absolute;
-			bottom: 0;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding-top: 30px;
-			transform: rotate(-90deg);
+    &-number {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      transform: rotate(-90deg);
 
-			&::before {
-				width: 1px;
+      &::before {
+        width: 1px;
 
-				height: 15px;
-				margin-bottom: 10px;
-				background-color: var(--black-color);
-				content: "";
-			}
-		}
-	}
+        height: 15px;
+        margin-bottom: 10px;
+        background-color: var(--black-color);
+        content: '';
+      }
+    }
+  }
 }
 
 @media only screen and (min-height: 1023px) {
-	.service-item {
-		color: var(--primary-black-color);
-		h3 {
-			margin-bottom: 20px;
-			font-size: var(--font-25);
-		}
-		ol {
-			margin-bottom: 20px;
-		}
-	}
+  .service-item {
+    color: var(--primary-black-color);
+    h3 {
+      margin-bottom: 20px;
+      font-size: var(--font-25);
+    }
+    ol {
+      margin-bottom: 20px;
+    }
+  }
 }
 
-
 @media only screen and (min-width: 1367px) {
-    .service-item {
-		margin-right: 75px;
-		padding-bottom: 20px;
-		h3 {
-			font-size: var(--font-35);
-		}
-		ol {
-            padding-bottom: 30px;
-			li {
-				font-size: var(--font-15);
-			}
-		}
-	}
+  .service-item {
+    margin-right: 75px;
+    padding-bottom: 20px;
+    h3 {
+      font-size: var(--font-35);
+    }
+    ol {
+      padding-bottom: 30px;
+      li {
+        font-size: var(--font-15);
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 1500px) {
-    .service-item {
-		margin-right: 100px;
-	}
+  .service-item {
+    margin-right: 100px;
+  }
 }
 
-@media only screen and (min-height: 900px) 
-{
-	.service-item
-	{
-		margin-right: 62px; /*Даня иди нахуй по другому не получается*/
-		h3 
-		{
-			margin-bottom: 35px;
-			font-size: var(--font-40);
-		}
-		ol
-		{
-			padding-bottom: 50px;
-			li 
-			{
-				margin-bottom: 10px;
-				font-size: var(--font-20);
-			}
-		}
-	}
+@media only screen and (min-height: 900px) {
+  .service-item {
+    margin-right: 62px; /*Даня иди нахуй по другому не получается*/
+    h3 {
+      margin-bottom: 35px;
+      font-size: var(--font-40);
+    }
+    ol {
+      padding-bottom: 50px;
+      li {
+        margin-bottom: 10px;
+        font-size: var(--font-20);
+      }
+    }
+  }
 }
 
-@media only screen and (min-height: 1000px)
-{
-	.service-item
-	{
-		padding-top: 30px;
-		h3 
-		{
-			margin-bottom: 50px;
-		}
-		ol
-		{
-			padding-bottom: 70px;
-			li 
-			{
-				margin-bottom: 15px;
-			}
-		}
-	}
-} 
-
-@media screen and (device-aspect-ratio: 4/3) and (min-width:768px) /* Айпады ебучие */
-{  
-	.service-item 
-	{
-		h3 
-		{
-			font-size: var(--font-30);
-		}
-	}
+@media only screen and (min-height: 1000px) {
+  .service-item {
+    padding-top: 30px;
+    h3 {
+      margin-bottom: 50px;
+    }
+    ol {
+      padding-bottom: 70px;
+      li {
+        margin-bottom: 15px;
+      }
+    }
+  }
 }
 
-@media screen and (device-aspect-ratio: 3/4) and (min-width:768px) /* Айпады ебучие */
-{
-	.service-item 
-	{
-		margin-right: 40px;
-		h3 
-		{
-			font-size: var(--font-25);
-		}
-		ol li 
-		{
-			font-size: var(--font-15);
-			line-height: 15px;
-		}
-	}
+@media screen and (device-aspect-ratio: 4/3) and (min-width: 768px) /* Айпады ебучие */ {
+  .service-item {
+    h3 {
+      font-size: var(--font-30);
+    }
+  }
 }
 
-@media screen and (device-aspect-ratio: 1024/1366) and (min-width:1024px) /* Айпады ебучие */
-{
-	.service-item 
-	{
-		padding-top: 60px;
-		h3 
-		{
-			font-size: var(--font-30);
-		}
-		ol 
-		{
-			li 
-			{
-				margin-bottom: 20px;
-				font-size: var(--font-20);
-				line-height: 20px;
-			}
-		}
-	}
+@media screen and (device-aspect-ratio: 3/4) and (min-width: 768px) /* Айпады ебучие */ {
+  .service-item {
+    margin-right: 40px;
+    h3 {
+      font-size: var(--font-25);
+    }
+    ol li {
+      font-size: var(--font-15);
+      line-height: 15px;
+    }
+  }
+}
+
+@media screen and (device-aspect-ratio: 1024/1366) and (min-width: 1024px) /* Айпады ебучие */ {
+  .service-item {
+    padding-top: 60px;
+    h3 {
+      font-size: var(--font-30);
+    }
+    ol {
+      li {
+        margin-bottom: 20px;
+        font-size: var(--font-20);
+        line-height: 20px;
+      }
+    }
+  }
 }

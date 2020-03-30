@@ -38,7 +38,6 @@ const AboutUs: React.FC<IAboutUsComponent> = ({ additionalClass = 'main-page' })
         childImageSharp: {
           fluid: { src },
         },
-        name: alt,
       },
     },
   }: IMainAbout = useStaticQuery(ABOUTUS_QUERY);
