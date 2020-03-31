@@ -28,6 +28,12 @@
     .white-bg &::after {
       border-color: var(--primary-black-color);
     }
+    &-error {
+      &::before,
+      &::after {
+        border-color: var(--red-color);
+      }
+    }
     &-field {
       padding: 5px 0px;
       border: none;

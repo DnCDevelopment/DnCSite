@@ -1,7 +1,7 @@
 import React from 'react';
 import './Pool.scss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { IPoolData } from './CommonTypes';
+import { IPool, IPoolData } from './CommonTypes';
 
 const POOL_QUERY = graphql`
   query PoolQuery {
@@ -14,7 +14,7 @@ const POOL_QUERY = graphql`
   }
 `;
 
-const Pool: React.FC = (): JSX.Element => {
+const Pool: React.FC<IPool> = ({ poolChoice, changeChoice }): JSX.Element => {
   const {
     data: { variants },
   }: IPoolData = useStaticQuery(POOL_QUERY);
@@ -25,7 +25,11 @@ const Pool: React.FC = (): JSX.Element => {
       </h3>
       <div className="pool-variants">
         {variants.map(({ id, title }) => (
-          <div key={`${id}_${title}`} className="pool-variants-item">
+          <div
+            key={`${id}_${title}`}
+            className={`pool-variants-item${poolChoice === title ? ' pool-variants-item-selected' : ''}`}
+            onClick={() => changeChoice(title)}
+          >
             {title}
           </div>
         ))}

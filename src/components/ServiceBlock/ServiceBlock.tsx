@@ -18,6 +18,7 @@ const SERVICE_QUERY = graphql`
           id
           shortName
           description
+          price
         }
       }
     }
@@ -29,6 +30,7 @@ const ServiceBlock: React.FC = (): JSX.Element => {
     data: { services },
   }: IServicesData = useStaticQuery(SERVICE_QUERY);
   const [currentService, changeService] = useState(0);
+
   return (
     <div className="service-block">
       <div>

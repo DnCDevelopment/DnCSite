@@ -46,3 +46,18 @@ export interface IPoolVariant {
   id: string | number;
   title: string;
 }
+
+export interface IPool {
+  poolChoice: string;
+  changeChoice: (string) => void;
+}
+
+export interface IForm {
+  poolChoice?: string;
+  changeSended: (bool) => void;
+  changeResponseCode: (number) => void;
+}
+
+export interface IResponse {
+  code: number;
+}

@@ -1,74 +1,110 @@
 .service-block-solution {
-	width: 100%;
-	margin-bottom: 10px;
-	padding: 15px;
-	color: var(--white-color);
-	text-align: center;
-	background-color: var(--primary-black-color);
-	&-name {
-		font-weight: var(--weight-800);
-		font-size: var(--font-15);
-		font-family: var(--font-open-sans);
-		font-style: normal;
-		text-transform: uppercase;
-	}
-	&-description {
-		max-height: 0px;
-		margin-top: 0px;
-		overflow: hidden;
-		font-weight: var(--weight-500);
-		font-size: var(--font-10);
-	}
-	&:hover {
-		background: var(--gradient-tricolor);
-		.service-block-solution-description {
-			max-height: 100%;
-			margin-top: 5px;
-		}
-	}
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  color: var(--white-color);
+  text-align: center;
+  background-color: var(--primary-black-color);
+  &-name {
+    font-weight: var(--weight-800);
+    font-size: var(--font-15);
+    font-family: var(--font-open-sans);
+    font-style: normal;
+    text-transform: uppercase;
+  }
+  &-description {
+    max-height: 0px;
+    margin-top: 0px;
+    overflow: hidden;
+    font-weight: var(--weight-500);
+    font-size: var(--font-10);
+    &-price {
+      display: block;
+      margin-top: 15px;
+      font-weight: var(--weight-800);
+      font-size: var(--font-20);
+      background: var(--gradient-blue-contacts);
+      background-clip: text;
+      -webkit-text-fill-color: var(--transparent);
+    }
+  }
+  &-selected {
+    background: var(--gradient-tricolor);
+    .service-block-solution-description {
+      max-height: 100%;
+      margin-top: 5px;
+      &-price {
+        background: unset;
+        background-clip: unset;
+        -webkit-text-fill-color: var(--unset);
+      }
+    }
+  }
 }
 @media only screen and (min-width: 375px) {
-	.service-block-solution-description {
-		font-size: var(--font-15);
-	}
+  .service-block-solution-description {
+    font-size: var(--font-15);
+  }
 }
 
 @media only screen and (min-width: 375px) {
-	.service-block-solution {
-		padding: 25px;
-	}
+  .service-block-solution {
+    padding: 25px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-	.service-block-solution {
-		display: flex;
-		justify-content: space-between;
-		padding: 0px;
-		background-color: var(--transparent);
-		&-name {
-			width: 37%;
-			margin-right: 2px;
-			padding: 30px 10px;
-			font-size: var(--font-22);
-			background-color: var(--primary-black-color);
-		}
+  .service-block-solution {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    background-color: var(--transparent);
+    &-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 37%;
+      margin-right: 2px;
+      padding: 30px 10px;
+      font-size: var(--font-22);
+      background-color: var(--primary-black-color);
+    }
 
-		&-description {
-			width: 63%;
-			max-height: none;
-			padding: 30px 30px;
-			text-align: justify;
-			background-color: var(--primary-black-color);
-		}
-		&-name:hover + &-description {
-			background: var(--gradient-tricolor);
-		}
-		&:hover {
-			background: none;
-			.service-block-solution-description {
-				max-height: none;
-				margin-top: 0px;
-			}
-		}
-	}
+    &-description {
+      width: 63%;
+      max-height: none;
+      padding: 30px 30px;
+      text-align: justify;
+      background-color: var(--primary-black-color);
+      &-price {
+        position: relative;
+        bottom: 0;
+      }
+    }
+
+    /* stylelint-disable  */
+    &-selected,
+    &:hover {
+      background: none;
+      .service-block-solution-description {
+        max-height: none;
+        margin-top: 0px;
+        .service-block-solution-description-price {
+          background: var(--gradient-blue-contacts);
+          background-clip: text;
+          -webkit-text-fill-color: var(--transparent);
+        }
+      }
+    }
+    /* stylelint-enable  */
+    &-name:hover + &-description {
+      background: var(--gradient-tricolor);
+      .service-block-solution-description-price {
+        color: var(--primary-black-color);
+        background: unset;
+        background-clip: unset;
+        -webkit-text-fill-color: var(--unset);
+      }
+    }
+  }
 }

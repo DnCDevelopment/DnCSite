@@ -1,22 +1,29 @@
 .react-multi-carousel {
-	&-list {
-		height: 85px;
-	}
-	&-track,
-	&-item,
-	&-list div,
-	&-list svg {
-		height: 100%;
-	}
+  &-list {
+    height: 85px;
+  }
+  &-track,
+  &-item,
+  &-list div,
+  &-list svg {
+    height: 100%;
+  }
+  &-item .techologies-item {
+    display: flex;
+    justify-content: center;
+    svg {
+      max-width: 50%;
+    }
+  }
 }
 
 @media only screen and (min-height: 600px) {
-	.react-multi-carousel-list {
-		height: 120px;
-	}
+  .react-multi-carousel-list {
+    height: 120px;
+  }
 }
 @media only screen and (min-height: 800px) {
-	.sreact-multi-carousel-list {
-		height: 160px;
-	}
+  .sreact-multi-carousel-list {
+    height: 160px;
+  }
 }

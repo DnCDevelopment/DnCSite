@@ -7,24 +7,22 @@ header {
   width: 100vw;
   height: 60px;
   padding: 40px 40px;
-  .placeholder-div
-  {
+  .placeholder-div {
     width: 30px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   header {
-    padding:  60px 50px;
+    padding: 60px 50px;
     .placeholder-div {
       display: none;
     }
   }
 }
 
-
 @media only screen and (min-width: 900px) {
   header {
-    padding:  60px 90px;
+    padding: 40px 90px;
   }
 }

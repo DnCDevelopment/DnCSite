@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Form.scss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { IFormData } from './CommonTypes';
+import { IForm, IFormData } from './CommonTypes';
 
 const FORM_QUERY = graphql`
   query FormQuery {
@@ -16,7 +16,7 @@ const FORM_QUERY = graphql`
   }
 `;
 
-const Form: React.FC = (): JSX.Element => {
+const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode }): JSX.Element => {
   const {
     strapiContactform: { titile, blueTitle, namePlaceholder, telPlaceholder, mailPlaceholder, sendTitle },
   }: IFormData = useStaticQuery(FORM_QUERY);
@@ -24,9 +24,42 @@ const Form: React.FC = (): JSX.Element => {
   const [name, changeName] = useState('');
   const [tel, changeTel] = useState('');
   const [mail, changeMail] = useState('');
+  const [errFields, changeErrFields] = useState([]);
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
+    /* eslint-disable */
+    if (
+      name.length > 2 &&
+      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) &&
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)
+    ) {
+      const body = {
+        name: name,
+        phone: tel,
+        mail: mail,
+      };
+      if (poolChoice !== '') body.poolChoice = poolChoice;
+
+      fetch('/api/sendMail', {
+        method: 'POST',
+        body: JSON.stringify(body),
+      })
+        .then(response => {
+          changeResponseCode(response.status);
+        })
+        .catch(err => {
+          changeResponseCode(500);
+        })
+        .finally(() => changeSended(true));
+    } else {
+      let tmp = [];
+      if (name.length < 2) tmp.push(name);
+      if (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) === false) tmp.push(tel);
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail) === false) tmp.push(mail);
+      changeErrFields(tmp);
+    }
+    /* eslint-enable */
   };
 
   return (
@@ -37,7 +70,7 @@ const Form: React.FC = (): JSX.Element => {
         <span className="contact-us-header">{blueTitle}</span>
       </h3>
       <form>
-        <div className="contact-us-form-input">
+        <div className={`contact-us-form-input${errFields.includes(name) ? ' contact-us-form-input-error' : ''}`}>
           <input
             className="contact-us-form-input-field"
             type="text"
@@ -49,7 +82,7 @@ const Form: React.FC = (): JSX.Element => {
             }}
           />
         </div>
-        <div className="contact-us-form-input">
+        <div className={`contact-us-form-input${errFields.includes(tel) ? ' contact-us-form-input-error' : ''}`}>
           <input
             className="contact-us-form-input-field"
             type="tel"
@@ -61,7 +94,7 @@ const Form: React.FC = (): JSX.Element => {
             }}
           />
         </div>
-        <div className="contact-us-form-input">
+        <div className={`contact-us-form-input${errFields.includes(mail) ? ' contact-us-form-input-error' : ''}`}>
           <input
             className="contact-us-form-input-field"
             type="email"

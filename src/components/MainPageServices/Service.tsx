@@ -10,7 +10,9 @@ const Service: React.FC<IService> = ({ serviceName, serviceSolutions, dataKey })
         <>
           <ol className="service-item-solutions">
             {serviceSolutions.map(({ id, solutionName }) => (
-              <li key={id}>{solutionName}</li>
+              <li key={id}>
+                <a href="#ContactUs">{solutionName}</a>
+              </li>
             ))}
           </ol>
         </>

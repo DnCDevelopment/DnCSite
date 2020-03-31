@@ -48,6 +48,7 @@
     font-size: var(--font-30);
     font-family: var(--font-open-sans);
     font-style: normal;
+    white-space: nowrap;
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -91,8 +92,7 @@
   .header-menu {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-top: 220px;
+    justify-content: center;
     h2 {
       font-size: var(--font-250);
     }
@@ -107,7 +107,6 @@
       display: grid;
       grid-template-columns: repeat(5, auto);
       width: 100%;
-      margin-top: 0;
       & li {
         border-right: 1px solid var(--white-color);
         &:last-of-type {
@@ -128,6 +127,13 @@
 }
 
 @media only screen and (min-width: 1300px) {
+  .header-menu-link {
+    font-size: var(--font-35);
+    line-height: var(--font-35);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
   .header-menu-link {
     font-size: var(--font-40);
     line-height: var(--font-40);
