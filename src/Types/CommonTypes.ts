@@ -59,6 +59,7 @@ export interface IService {
   svg?: string;
   description?: string;
   serviceSolutions: IServiceSolution[];
+  price?: string;
   dataKey: number;
 }
 

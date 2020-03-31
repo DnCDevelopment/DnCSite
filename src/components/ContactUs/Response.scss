@@ -1,0 +1,17 @@
+.response {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  &-message {
+    margin-top: 50px;
+    color: var(--white-color);
+    font-size: var(--font-25);
+    text-align: center;
+  }
+  .white-bg & {
+    &-message {
+      color: var(--primary-black-color);
+    }
+  }
+}

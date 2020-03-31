@@ -54,4 +54,10 @@ export interface IPool {
 
 export interface IForm {
   poolChoice?: string;
+  changeSended: (bool) => void;
+  changeResponseCode: (number) => void;
+}
+
+export interface IResponse {
+  code: number;
 }

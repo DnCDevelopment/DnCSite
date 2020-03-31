@@ -16,7 +16,7 @@ const FORM_QUERY = graphql`
   }
 `;
 
-const Form: React.FC<IForm> = ({ poolChoice }): JSX.Element => {
+const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode }): JSX.Element => {
   const {
     strapiContactform: { titile, blueTitle, namePlaceholder, telPlaceholder, mailPlaceholder, sendTitle },
   }: IFormData = useStaticQuery(FORM_QUERY);
@@ -27,6 +27,7 @@ const Form: React.FC<IForm> = ({ poolChoice }): JSX.Element => {
   const [errFields, changeErrFields] = useState([]);
 
   const handleSubmit = (e: React.MouseEvent) => {
+    e.preventDefault();
     /* eslint-disable */
     if (
       name.length > 2 &&
@@ -40,10 +41,17 @@ const Form: React.FC<IForm> = ({ poolChoice }): JSX.Element => {
       };
       if (poolChoice !== '') body.poolChoice = poolChoice;
 
-      const response = fetch('/api/sendMail', {
+      fetch('/api/sendMail', {
         method: 'POST',
         body: JSON.stringify(body),
-      });
+      })
+        .then(response => {
+          changeResponseCode(response.status);
+        })
+        .catch(err => {
+          changeResponseCode(500);
+        })
+        .finally(() => changeSended(true));
     } else {
       let tmp = [];
       if (name.length < 2) tmp.push(name);
@@ -52,8 +60,6 @@ const Form: React.FC<IForm> = ({ poolChoice }): JSX.Element => {
       changeErrFields(tmp);
     }
     /* eslint-enable */
-
-    e.preventDefault();
   };
 
   return (

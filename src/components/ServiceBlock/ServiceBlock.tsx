@@ -18,6 +18,7 @@ const SERVICE_QUERY = graphql`
           id
           shortName
           description
+          price
         }
       }
     }

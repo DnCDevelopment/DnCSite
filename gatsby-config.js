@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: 'DnCSite',
+    title: 'D&C WEB DEVELOPMENT',
     description: 'DnCSite',
     siteUrl: 'https://dnc.lt.ua/',
     author: {
@@ -142,6 +142,14 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://dnc.lt.ua/',
+        sitemap: 'https://dnc.lt.ua/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     /* eslint-disable */
