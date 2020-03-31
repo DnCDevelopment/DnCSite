@@ -13,6 +13,7 @@
     "build": "gatsby build",
     "clean": "rimraf public",
     "deploy": "rm -rf .cache public && gatsby build && firebase deploy",
+    "deploy-prod": "rm -rf .cache public node-modules && npm i && gatsby build && firebase deploy",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
