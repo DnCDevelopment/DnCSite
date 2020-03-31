@@ -16,7 +16,7 @@ const mailTransport = nodemailer.createTransport({
 });
 
 exports.sendMail = functions.https.onRequest((req, res) => {
-  const data = req.body;
+  const data = JSON.parse(req.body);
 
   const template = Object.keys(data).reduce((acc, key) => {
     acc += `<p><b>${key}: </b>${data[key]}</p>`;
