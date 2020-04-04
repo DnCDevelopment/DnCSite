@@ -8,7 +8,7 @@ import { IScrollCallbackArgs } from '../Types/CommonTypes';
 import PortfolioBlock from '../components/Portfolio/PortfolioBlockTemp';
 import SEO from '../components/SEO/SEO';
 
-const COMPONENTS = [<Banner title="Портфолио" />, <PortfolioBlock />, <ContactUs />];
+const COMPONENTS = [<Banner title="Портфолио" anchor="#OurWorks" />, <PortfolioBlock />, <ContactUs />];
 
 const PORTFOLIO_SEO = graphql`
   query PortfolioSeo {

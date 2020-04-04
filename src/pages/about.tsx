@@ -11,7 +11,7 @@ import Team from '../components/Team/Team';
 import SEO from '../components/SEO/SEO';
 
 const COMPONENTS: JSX.Element[] = [
-  <Banner title="О нас" />,
+  <Banner title="О нас" anchor="#AboutUs" />,
   <AboutUs additionalClass="about-page" />,
   <AboutUsAdditional />,
   <Team />,

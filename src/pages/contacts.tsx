@@ -8,7 +8,11 @@ import SEO from '../components/SEO/SEO';
 import { IScrollCallbackArgs } from '../Types/CommonTypes';
 import ContactAddress from '../components/ContactUs/ContactAddress';
 
-const COMPONENTS = [<Banner title="Контакты" additionalClass="blue-title" />, <ContactAddress />, <ContactUs isContactsPage />];
+const COMPONENTS = [
+  <Banner title="Контакты" additionalClass="blue-title" anchor="#OurContacts" />,
+  <ContactAddress />,
+  <ContactUs isContactsPage />,
+];
 
 const CONTACTS_SEO = graphql`
   query ContactsSeo {

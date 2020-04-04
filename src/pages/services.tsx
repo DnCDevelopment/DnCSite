@@ -8,7 +8,7 @@ import nextBlock from '../components/Controls/nextBlockContext';
 import { IScrollCallbackArgs } from '../Types/CommonTypes';
 import SEO from '../components/SEO/SEO';
 
-const COMPONENTS = [<Banner title="Услуги" />, <ServiceBlock />, <ContactUs />];
+const COMPONENTS = [<Banner title="Услуги" anchor="#Services" />, <ServiceBlock />, <ContactUs />];
 
 const SERVICES_SEO = graphql`
   query ServicesSeo {
