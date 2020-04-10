@@ -1,10 +1,9 @@
-import React, { useCallback, useState } from 'react';
-
-import Logo from './Logo';
+import React, { Suspense, useCallback, useState } from 'react';
 import Menu from './Menu';
 import OpenBtn from './OpenBtn';
-
 import './Header.scss';
+
+const Logo = React.lazy(() => import('./Logo.tsx'));
 
 const Header: React.FC = (): JSX.Element => {
   const [isMenuOpen, openMenu] = useState(false);
@@ -17,7 +16,11 @@ const Header: React.FC = (): JSX.Element => {
   return (
     <header>
       <OpenBtn menuOpen={menuOpen} />
-      {typeof window !== 'undefined' && window.innerWidth > 768 && <Logo />}
+      {typeof window !== 'undefined' && window.innerWidth > 768 && (
+        <Suspense fallback={<div />}>
+          <Logo />
+        </Suspense>
+      )}
       <div className="placeholder-div" />
       <Menu isMenuOpen={isMenuOpen} menuOpen={menuOpen} />
     </header>

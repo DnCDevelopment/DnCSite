@@ -1,39 +1,26 @@
-import React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
-
-import { ILogo } from '../../Types/CommonTypes';
-
+import React, { useEffect, useRef } from 'react';
+import { Link } from 'gatsby';
+import lottie from 'lottie-web';
+import animation from '../../assets/animations/json/dcdnew.json';
 import './Logo.scss';
 
-const LOGO_QUERY = graphql`
-  query LogoQuery {
-    settings: strapiSettings {
-      logo {
-        childImageSharp {
-          fluid {
-            src
-          }
-        }
-      }
-      name
-    }
-  }
-`;
-
 const Logo: React.FC = () => {
-  const {
-    settings: {
-      logo: {
-        childImageSharp: {
-          fluid: { src },
-        },
-      },
-      name,
-    },
-  }: ILogo = useStaticQuery(LOGO_QUERY);
+  const animationContainer = useRef();
+
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: animationContainer.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: animation,
+    });
+    return () => anim.destroy();
+  }, []);
+
   return (
     <Link to="/" className="logo-container">
-      <img src={src} alt={name} />
+      <div className="logo-container-anim" ref={animationContainer} />
     </Link>
   );
 };

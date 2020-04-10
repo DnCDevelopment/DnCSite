@@ -21,7 +21,7 @@ const Contacts: React.FC = () => {
     strapiContactsblock: { contactsTitle, contacts },
   }: IContactsData = useStaticQuery(CONTACTS_QUERY);
   return (
-    <div>
+    <div className="contacts-info">
       <h3 className="contact-us-header">{contactsTitle}</h3>
       <ul className="contact-us-list">
         {contacts.map(({ id, title, href }) =>

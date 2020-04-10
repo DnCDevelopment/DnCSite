@@ -197,6 +197,31 @@ module.exports = {
       },
     },
     /* eslint-enable */
+    {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        features: {
+          auth: false,
+          database: false,
+          firestore: false,
+          storage: false,
+          messaging: false,
+          functions: false,
+          performance: false,
+          analytics: true,
+        },
+        credentials: {
+          apiKey: 'AIzaSyBXFIGHjMqlZkOuaN2fHce-xmgzCbO47z0',
+          authDomain: 'direct-raceway-269321.firebaseapp.com',
+          databaseURL: 'https://direct-raceway-269321.firebaseio.com',
+          projectId: 'direct-raceway-269321',
+          storageBucket: 'direct-raceway-269321.appspot.com',
+          messagingSenderId: '139520821933',
+          appId: '1:139520821933:web:e2210b5cc385138a6d9424',
+          measurementId: 'G-MECVB5EC6W',
+        },
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Form.scss';
 import { graphql, useStaticQuery } from 'gatsby';
 import { IForm, IFormData } from './CommonTypes';
+import Loader from '../../assets/animations/svg/loader.inline.svg';
 
 const FORM_QUERY = graphql`
   query FormQuery {
@@ -25,6 +26,7 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
   const [tel, changeTel] = useState('');
   const [mail, changeMail] = useState('');
   const [errFields, changeErrFields] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -34,6 +36,7 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
       /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(tel) &&
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)
     ) {
+      setLoader(true);
       const body = {
         name: name,
         phone: tel,
@@ -106,7 +109,11 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
             }}
           />
         </div>
-        <input className="contact-us-form-submit" type="submit" value={sendTitle} onClick={handleSubmit} />
+        {loader ? (
+          <Loader className="contact-us-form-loader" />
+        ) : (
+          <input type="submit" className="contact-us-form-submit" onClick={handleSubmit} value={sendTitle} />
+        )}
       </form>
     </div>
   );

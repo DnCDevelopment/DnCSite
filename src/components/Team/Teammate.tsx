@@ -14,7 +14,7 @@ const Teammate: React.FC<ITeammate> = ({ teammateName, position, descritpion, pi
       <div className="team-member-picture" style={{ backgroundImage: `url(${src})` }} />
       <h3 className="team-member-name">{teammateName}</h3>
       <h4 className="team-member-position">{position}</h4>
-      <p className="team-member-description">{descritpion}</p>
+      <p className="team-member-description" dangerouslySetInnerHTML={{ __html: descritpion }} />
     </div>
   );
 };
