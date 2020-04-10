@@ -1,4 +1,11 @@
 .contact-us-form {
+  &-loader {
+    height: 40px;
+    margin: 0 auto;
+    .white-bg & {
+      filter: invert(1);
+    }
+  }
   &-input {
     position: relative;
     margin-bottom: 10px;
@@ -111,6 +118,10 @@
     }
     &-submit {
       width: 350px;
+    }
+    &-loader {
+      width: 300px;
+      margin: 10px 0;
     }
   }
 }
