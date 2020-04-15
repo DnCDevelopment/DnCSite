@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
-import { ISiteMeta } from './CommonTypes';
+import { ISiteMeta, ISEO } from './CommonTypes';
 import logo from '../../assets/images/illustrations/logo.png';
 
 const SEO_QUERY = graphql`
@@ -19,7 +19,7 @@ const SEO_QUERY = graphql`
   }
 `;
 
-const SEO: React.FC = ({
+const SEO: React.FC<ISEO> = ({
   descriptionProp,
   lang = 'ru',
   titleProp,
@@ -28,6 +28,7 @@ const SEO: React.FC = ({
   canonicalUrl,
   noindex = false,
   date = '2019-03-15',
+  keywords,
 }): JSX.Element => {
   const {
     site: {
@@ -40,14 +41,14 @@ const SEO: React.FC = ({
     },
   }: ISiteMeta = useStaticQuery(SEO_QUERY);
 
-  const metaDescription = description || descriptionProp;
+  const metaDescription = descriptionProp || description;
   const context = 'http://schema.org';
 
   const schemaOrgJSONLD = [
     {
       '@context': context,
       '@type': 'Organization',
-      address: 'Я ебу',
+      address: 'Украина г. Киев ул. Здолбуновская 5А, 02081 ',
       url: siteUrl,
       name: title,
       sameAs: [],
@@ -68,7 +69,7 @@ const SEO: React.FC = ({
       publisher: {
         '@type': 'Organization',
         name: 'DnC',
-        telephone: '(097) 097-88-88',
+        telephone: '+38(099)-17-92014',
         logo: {
           '@type': 'ImageObject',
           url: siteUrl,
@@ -94,11 +95,15 @@ const SEO: React.FC = ({
         lang,
       }}
       title={titleProp}
-      titleTemplate={`%s | ${title}`}
+      titleTemplate="%s"
       meta={[
         {
           name: 'description',
           content: metaDescription,
+        },
+        {
+          name: 'keywords',
+          content: keywords,
         },
         {
           property: 'og:title',
