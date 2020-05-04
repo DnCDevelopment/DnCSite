@@ -135,7 +135,7 @@ const SEO: React.FC<ISEO> = ({
         },
       ]}
     >
-      <link rel="canonical" href={`${siteUrl}${canonicalUrl || path}`} />
+      <link rel="canonical" href={`${siteUrl}${canonicalUrl || path}/`} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
     </Helmet>
