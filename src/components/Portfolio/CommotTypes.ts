@@ -17,3 +17,8 @@ export interface IPotfolioTypeSelect {
   currentType: number;
   changeType: (arg0: number) => void;
 }
+
+export interface IDot {
+  onClick: () => void;
+  active: boolean;
+}

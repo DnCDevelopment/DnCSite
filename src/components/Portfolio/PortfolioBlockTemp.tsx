@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Carousel from 'react-multi-carousel';
+import CustomDot from './CustomDot';
 import PortfolioCarouselItem from './PortfolioCarouselItem';
 import CarouselButtonGroup from '../Controls/CarouselButtonGroup';
 import { IPortfolioCarousel } from '../../Types/CommonTypes';
@@ -49,6 +50,7 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
           responsive={responsive}
           customButtonGroup={<CarouselButtonGroup />}
           showDots
+          customDot={<CustomDot />}
           renderDotsOutside
           renderButtonGroupOutside={typeof window !== 'undefined' && window.innerWidth > 1024}
           infinite
