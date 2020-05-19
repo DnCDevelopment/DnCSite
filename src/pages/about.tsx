@@ -7,14 +7,12 @@ import ContactUs from '../components/ContactUs/ContactUs';
 import Banner from '../components/Banner/Banner';
 import nextBlock from '../components/Controls/nextBlockContext';
 import { IScrollCallbackArgs, ISEOQuery } from '../Types/CommonTypes';
-import Team from '../components/Team/Team';
 import SEO from '../components/SEO/SEO';
 
 const COMPONENTS: JSX.Element[] = [
   <Banner title="О нас" anchor="#AboutUs" />,
   <AboutUs additionalClass="about-page" />,
   <AboutUsAdditional />,
-  <Team />,
   <ContactUs />,
 ];
 
@@ -39,7 +37,7 @@ const IndexPage: React.FC = (): JSX.Element => {
     activeClass: 'current',
     parallax: true,
     sectionClassName: 'section',
-    anchors: ['DnCBanner', 'AboutUs', 'AboutText', 'Team', 'ContactUs'],
+    anchors: ['DnCBanner', 'AboutUs', 'AboutText', 'ContactUs'],
     scrollBar: false,
     navigation: false,
     verticalAlign: false,

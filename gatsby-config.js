@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'D&C WEB DEVELOPMENT',
     description: 'DnCSite',
-    siteUrl: 'https://dnc.lt.ua/',
+    siteUrl: 'https://dnc.net.ua/',
     author: {
       name: '@DnCDevelopment',
     },
@@ -178,8 +178,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://dnc.lt.ua/',
-        sitemap: 'https://dnc.lt.ua/sitemap.xml',
+        host: 'https://dnc.net.ua/',
+        sitemap: 'https://dnc.net.ua/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },

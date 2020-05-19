@@ -20,6 +20,7 @@ const MAIN_SEO = graphql`
       lang
       path
       date
+      keywords
     }
   }
 `;
@@ -27,7 +28,7 @@ const MAIN_SEO = graphql`
 const IndexPage: React.FC = (): JSX.Element => {
   const [current, setCurrent] = useState(0);
   const {
-    strapiSeos: { title, description, lang, path, date },
+    strapiSeos: { title, description, lang, path, date, keywords },
   }: ISEOQuery = useStaticQuery(MAIN_SEO);
   const options = {
     activeClass: 'current',
@@ -52,7 +53,7 @@ const IndexPage: React.FC = (): JSX.Element => {
   }, [current]);
   return (
     <>
-      <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} />
+      <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} keywords={keywords} />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>
           {/* eslint-disable */}

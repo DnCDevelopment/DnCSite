@@ -25,6 +25,7 @@
     text-decoration: none;
   }
   &-map {
+    filter: invert(1) grayscale(1);
     iframe {
       max-width: 100%;
       height: 200px;

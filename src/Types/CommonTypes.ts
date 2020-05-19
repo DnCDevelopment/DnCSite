@@ -122,5 +122,6 @@ export interface ISEOQuery {
     lang: string;
     path: string;
     date: string;
+    keywords?: string;
   };
 }

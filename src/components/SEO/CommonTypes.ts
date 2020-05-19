@@ -18,4 +18,5 @@ export interface ISEO {
   date: string;
   canonicalUrl?: string;
   noindex: bool;
+  keywords?: string;
 }
