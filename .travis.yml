@@ -15,8 +15,8 @@ env:
   - GATSBY_FIREBASE_MEASUREMENT_ID=$GATSBY_FIREBASE_MEASUREMENT_ID
   - GA_TRACKING_ID=$GA_TRACKING_ID
 install:
-  - npm intall -g firebase-tools
-  - npm intall -g gatsby
+  - npm install -g firebase-tools
+  - npm install -g gatsby
 script:
   - npm run build
 after_success:
