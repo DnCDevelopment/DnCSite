@@ -20,6 +20,7 @@ install:
   - npm install
   - cd functions
   - npm install
+  - сd ..
 script:
   - npm run build
 after_success:
