@@ -24,7 +24,7 @@ install:
 script:
   - npm run build
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+  - firebase deploy --except functions --token $FIREBASE_TOKEN
 branches:
   only:
     - master
