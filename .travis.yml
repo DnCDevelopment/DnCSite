@@ -7,9 +7,9 @@ env:
 install:
   - npm install -g firebase-tools
   - npm install -g gatsby
-  - npm install
+  - npm ci
   - cd ./functions
-  - npm install
+  - npm ci
   - - cd ./../
 script:
   - npm run build
