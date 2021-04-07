@@ -46,6 +46,7 @@ module.exports = {
       options: {
         token: process.env.COCKPIT_TOKEN,
         baseUrl: process.env.COCKPIT_URL,
+        locales: [],
         collections: [],
       },
     },
@@ -115,7 +116,7 @@ module.exports = {
           },
           {
             family: 'Open Sans',
-            variants: ['200', '300', '400', '500', '600', '700', '800', '900'],
+            weights: ['200', '300', '400', '500', '600', '700', '800', '900'],
           },
         ],
       },

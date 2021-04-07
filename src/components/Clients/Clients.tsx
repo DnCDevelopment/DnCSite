@@ -7,11 +7,15 @@ import './Clients.scss';
 
 const CLIENT_QUERY = graphql`
   query ClientsQuery {
-    data: allStrapiClients {
+    data: allCockpitClients {
       clients: nodes {
         id
-        clientName
-        svg
+        clientName {
+          value
+        }
+        svg {
+          value
+        }
       }
     }
   }
@@ -29,7 +33,7 @@ const Clients: React.FC = (): JSX.Element => {
       </h2>
       <div className="clients-container">
         {clients.map(({ id, clientName, svg }) => (
-          <div key={`${id}_${clientName}`} className="clients-container-item" dangerouslySetInnerHTML={{ __html: svg }} />
+          <div key={`${id}_${clientName.value}`} className="clients-container-item" dangerouslySetInnerHTML={{ __html: svg.value }} />
         ))}
       </div>
       <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>

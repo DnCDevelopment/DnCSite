@@ -2,8 +2,12 @@ import { IPortfolio } from '../../Types/CommonTypes';
 
 export interface IPortfolioType {
   id: number | string;
-  name: string;
-  portfolios: IPortfolio[];
+  name: {
+    value: string;
+  };
+  portfolios: {
+    value: IPortfolio[];
+  };
 }
 
 export interface IPortfolioTypeData {

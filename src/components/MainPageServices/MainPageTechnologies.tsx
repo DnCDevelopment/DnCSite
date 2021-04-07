@@ -7,15 +7,25 @@ import './MainPageTechnologies.scss';
 
 const TECHNOLOGIES_QUERY = graphql`
   query TechnologiesQuery {
-    allStrapiTechnology {
+    data: allCockpitTechnologies {
       technologies: edges {
         technology: node {
           id
-          technologyName: name
-          svg
-          x
-          y
-          viewSize
+          technologyName {
+            value
+          }
+          svg {
+            value
+          }
+          x {
+            value
+          }
+          y {
+            value
+          }
+          viewSize {
+            value
+          }
         }
       }
     }
@@ -26,7 +36,7 @@ const MainPageTechnologies: React.FC = (): JSX.Element => {
   // ТС ругался на это techologies={technologies}
 
   const {
-    allStrapiTechnology: { technologies },
+    data: { technologies },
   }: IMainPageTechologies = useStaticQuery(TECHNOLOGIES_QUERY);
 
   return (

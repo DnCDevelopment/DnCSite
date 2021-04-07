@@ -10,15 +10,25 @@ import { IServicesData } from './CommonTypes';
 
 const SERVICE_QUERY = graphql`
   query SERVICE_QUERY {
-    data: allStrapiServices {
+    data: allCockpitServices {
       services: nodes {
+        serviceSolutions {
+          value {
+            id
+            shortName {
+              value
+            }
+            description {
+              value
+            }
+            price {
+              value
+            }
+          }
+        }
         id
-        serviceName: name
-        serviceSolutions: servicesolutions {
-          id
-          shortName
-          description
-          price
+        serviceName {
+          value
         }
       }
     }

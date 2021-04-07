@@ -8,19 +8,31 @@ import './AboutUs.scss';
 
 const ABOUTUS_QUERY = graphql`
   query AboutQuery {
-    aboutUs: strapiAboutus {
-      title
-      subtitle
-      mainPageContent: mainpage_content
-      linkText: link_text
-      link
-      main_page_photo {
-        childImageSharp {
-          fluid {
-            src
+    aboutUs: cockpitAboutUs {
+      title {
+        value
+      }
+      subtitle {
+        value
+      }
+      link {
+        value
+      }
+      linkText {
+        value
+      }
+      mainPageContent {
+        value
+      }
+      mainPagePhoto {
+        value {
+          childImageSharp {
+            fluid {
+              src
+            }
           }
+          name
         }
-        name
       }
     }
   }
@@ -34,9 +46,11 @@ const AboutUs: React.FC<IAboutUsComponent> = ({ additionalClass = 'main-page' })
       mainPageContent,
       linkText,
       link,
-      main_page_photo: {
-        childImageSharp: {
-          fluid: { src },
+      mainPagePhoto: {
+        value: {
+          childImageSharp: {
+            fluid: { src },
+          },
         },
       },
     },
@@ -45,13 +59,13 @@ const AboutUs: React.FC<IAboutUsComponent> = ({ additionalClass = 'main-page' })
   return (
     <div className={`about-us ${additionalClass}`}>
       <div className="text-block">
-        <h4>{subtitle}</h4>
-        <h2>{title}</h2>
-        <article dangerouslySetInnerHTML={{ __html: mainPageContent }} />
-        {additionalClass === 'main-page' && <Link to={link}>{linkText}</Link>}
+        <h4>{subtitle.value}</h4>
+        <h2>{title.value}</h2>
+        <article dangerouslySetInnerHTML={{ __html: mainPageContent.value }} />
+        {additionalClass === 'main-page' && <Link to={link.value}>{linkText.value}</Link>}
       </div>
       <div className="image-block" style={{ backgroundImage: `url(${src})` }} />
-      {additionalClass === 'main-page' && <Link to={link}>{linkText}</Link>}
+      {additionalClass === 'main-page' && <Link to={link.value}>{linkText.value}</Link>}
       <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>
     </div>
   );

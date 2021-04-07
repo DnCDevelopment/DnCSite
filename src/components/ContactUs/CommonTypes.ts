@@ -4,35 +4,63 @@ export interface IContactsComponent {
 
 export interface IContact {
   id: string;
-  title: string;
-  href: string | null;
+  title: {
+    value: string;
+  };
+  href: {
+    value: string | null;
+  };
 }
 
 export interface IContactsData {
-  strapiContactsblock: {
-    contactsTitle: string;
+  data: {
+    contactsTitle: {
+      value: string;
+    };
     contacts: IContact[];
   };
 }
 
 export interface IFormData {
-  strapiContactform: {
-    titile: string;
-    blueTitle: string;
-    namePlaceholder: string;
-    telPlaceholder: string;
-    mailPlaceholder: string;
-    sendTitle: string;
+  data: {
+    title: {
+      value: string;
+    };
+    blueTitle: {
+      value: string;
+    };
+    namePlaceholder: {
+      value: string;
+    };
+    telPlaceholder: {
+      value: string;
+    };
+    mailPlaceholder: {
+      value: string;
+    };
+    sendTitle: {
+      value: string;
+    };
   };
 }
 
 export interface IAdressData {
   data: {
-    addressTitle: string;
-    address: string;
-    workTimeTitle: string;
-    worktime: string;
-    map: string;
+    addressTitle: {
+      value: string;
+    };
+    address: {
+      value: string;
+    };
+    workTimeTitle: {
+      value: string;
+    };
+    worktime: {
+      value: string;
+    };
+    map: {
+      value: string;
+    };
   };
 }
 
@@ -44,7 +72,9 @@ export interface IPoolData {
 
 export interface IPoolVariant {
   id: string | number;
-  title: string;
+  title: {
+    value: string;
+  };
 }
 
 export interface IPool {

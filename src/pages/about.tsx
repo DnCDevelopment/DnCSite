@@ -18,12 +18,22 @@ const COMPONENTS: JSX.Element[] = [
 
 const ABOUT_SEO = graphql`
   query AboutSeo {
-    strapiSeos(strapiId: { eq: 2 }) {
-      title
-      description
-      lang
-      path
-      date
+    cockpitSeos {
+      title {
+        value
+      }
+      description {
+        value
+      }
+      lang {
+        value
+      }
+      path {
+        value
+      }
+      date {
+        value
+      }
     }
   }
 `;
@@ -31,7 +41,7 @@ const ABOUT_SEO = graphql`
 const IndexPage: React.FC = (): JSX.Element => {
   const [current, setCurrent] = useState(0);
   const {
-    strapiSeos: { title, description, lang, path, date },
+    cockpitSeos: { title, description, lang, path, date },
   }: ISEOQuery = useStaticQuery(ABOUT_SEO);
   const options = {
     activeClass: 'current',
@@ -52,7 +62,7 @@ const IndexPage: React.FC = (): JSX.Element => {
   }, []);
   return (
     <>
-      <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} />
+      <SEO descriptionProp={description.value} lang={lang.value} titleProp={title.value} path={path.value} date={date.value} />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>
           {/* eslint-disable */}

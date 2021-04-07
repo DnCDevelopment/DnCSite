@@ -17,7 +17,7 @@ const ServiceSelect: React.FC<IServicesSelect> = ({ services, onChange, currentV
             onChange(index);
           }}
         >
-          {serviceName}
+          {serviceName.value}
           <span className="service-block-select-option-arrow">
             <ArrowSVG />
           </span>

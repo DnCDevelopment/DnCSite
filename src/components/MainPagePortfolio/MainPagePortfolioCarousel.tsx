@@ -8,13 +8,21 @@ import './MainPagePortfolioCarousel.scss';
 
 const PORTFOLIO_CAROUSEL_QUERY = graphql`
   query PortfolioItemsQuery {
-    data: allStrapiPortfolio {
+    data: allCockpitPortfolio {
       portfolioItems: nodes {
         id
-        name
-        svg
-        rgba
-        link
+        name {
+          value
+        }
+        svg {
+          value
+        }
+        rgba {
+          value
+        }
+        link {
+          value
+        }
       }
     }
   }
@@ -48,7 +56,7 @@ const MainPagePortfolioCarousel: React.FC = (): JSX.Element => {
         centerMode={typeof window !== 'undefined' && window.innerWidth > 767}
       >
         {portfolioItems.map(({ id, name, svg, rgba, link }) => (
-          <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} link={link} />
+          <PortfolioCarouselItem key={`${id}_${name.value}`} svg={svg} rgba={rgba} link={link} />
         ))}
       </Carousel>
     </div>

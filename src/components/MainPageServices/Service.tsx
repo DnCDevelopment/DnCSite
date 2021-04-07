@@ -6,12 +6,12 @@ const Service: React.FC<IService> = ({ serviceName, serviceSolutions, dataKey })
   return (
     <div className="service-item">
       <h3>{serviceName}</h3>
-      {serviceSolutions.length > 0 && (
+      {serviceSolutions.value.length > 0 && (
         <>
           <ol className="service-item-solutions">
-            {serviceSolutions.map(({ id, solutionName }) => (
+            {serviceSolutions.value.map(({ id, solutionName }) => (
               <li key={id}>
-                <a href="#ContactUs">{solutionName}</a>
+                <a href="#ContactUs">{solutionName.value}</a>
               </li>
             ))}
           </ol>

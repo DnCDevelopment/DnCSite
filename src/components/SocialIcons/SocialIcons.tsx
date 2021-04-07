@@ -8,10 +8,14 @@ import './SocialLinks.scss';
 
 const SOCIAL_ICONS_QUERY = graphql`
   query SocialIconsQuery {
-    socialIcons: allStrapiSocialicon {
+    socialIcons: allCockpitSocialIcons {
       nodes {
-        icon
-        link
+        icon {
+          value
+        }
+        link {
+          value
+        }
       }
     }
   }
@@ -25,8 +29,8 @@ const SocialIcons: React.FC = (): JSX.Element => {
     <div className="social-icons">
       {socialIcons.map(
         ({ icon, link }: ISocialIcons): JSX.Element => (
-          <a className="social-link" key={link} href={link}>
-            <div dangerouslySetInnerHTML={{ __html: icon }} />
+          <a className="social-link" key={link.value} href={link.value}>
+            <div dangerouslySetInnerHTML={{ __html: icon.value }} />
           </a>
         )
       )}

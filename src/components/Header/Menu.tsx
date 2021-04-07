@@ -7,10 +7,14 @@ import './Menu.scss';
 
 const MENU_QUERY = graphql`
   query MenuQuery {
-    menu: allStrapiMenu {
+    menu: allCockpitMenu {
       nodes {
-        link
-        title
+        link {
+          value
+        }
+        title {
+          value
+        }
       }
     }
   }
@@ -28,9 +32,9 @@ const Menu: React.FC<IMenuProps> = ({ isMenuOpen, menuOpen }): JSX.Element => {
         <ul className="header-menu-list">
           {menu.map(
             ({ link, title }: IMenu): JSX.Element => (
-              <li с onClick={isMenuOpen ? menuOpen : undefined} key={link}>
-                <Link className="header-menu-link" to={link}>
-                  {title}
+              <li onClick={isMenuOpen ? menuOpen : undefined} key={link.value}>
+                <Link className="header-menu-link" to={link.value}>
+                  {title.value}
                 </Link>
               </li>
             )
