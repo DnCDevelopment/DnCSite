@@ -33,7 +33,7 @@ const Contacts: React.FC = () => {
     <div className="contacts-info">
       <h3 className="contact-us-header">{contactsTitle.value}</h3>
       <ul className="contact-us-list">
-        {contacts.map(({ id, title, href }) =>
+        {contacts.value.map(({ id, title, href }) =>
           href === null ? (
             <li key={`${id}_${title.value}`} className="contact-us-list-item">
               {title}

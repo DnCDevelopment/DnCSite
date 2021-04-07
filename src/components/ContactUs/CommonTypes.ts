@@ -17,7 +17,9 @@ export interface IContactsData {
     contactsTitle: {
       value: string;
     };
-    contacts: IContact[];
+    contacts: {
+      value: IContact[];
+    };
   };
 }
 
@@ -52,7 +54,7 @@ export interface IAdressData {
     address: {
       value: string;
     };
-    workTimeTitle: {
+    worktimeTitle: {
       value: string;
     };
     worktime: {

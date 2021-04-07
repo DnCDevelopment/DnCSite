@@ -62,7 +62,7 @@ const IndexPage: React.FC = (): JSX.Element => {
         titleProp={title.value}
         path={path.value}
         date={date.value}
-        keywords={keywords.value}
+        keywords={keywords?.value}
       />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>

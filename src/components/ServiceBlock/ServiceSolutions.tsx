@@ -15,14 +15,14 @@ const ServiceSolutions: React.FC<IServiceWraped> = ({ service }): JSX.Element =>
             toogleSelected((id as string) === selected ? '' : (id as string));
           }}
         >
-          <div className="service-block-solution-name">{shortName}</div>
+          <div className="service-block-solution-name">{shortName.value}</div>
           <div className="service-block-solution-description">
-            {description}
+            {description.value}
             {typeof price !== 'undefined' && price && (
               <>
                 <br />
                 <span className="service-block-solution-description-price">
-                  <a href="#ContactUs">{price}</a>
+                  <a href="#ContactUs">{price.value}</a>
                 </span>
               </>
             )}

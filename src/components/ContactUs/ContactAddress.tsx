@@ -27,14 +27,14 @@ const ADDRESS_QUERY = graphql`
 
 const ContactAddress: React.FC = (): JSX.Element => {
   const {
-    data: { addressTitle, address, workTimeTitle, worktime, map },
+    data: { addressTitle, address, worktimeTitle, worktime, map },
   }: IAdressData = useStaticQuery(ADDRESS_QUERY);
   return (
     <div className="contact-us contacts-extended">
       <div className="contacts-us-address">
         <h3 className="contact-us-header">{addressTitle.value}</h3>
         <p className="contact-us-text">{address.value}</p>
-        <h3 className="contact-us-header">{workTimeTitle.value}</h3>
+        <h3 className="contact-us-header">{worktimeTitle.value}</h3>
         <p className="contact-us-text">{worktime.value}</p>
       </div>
       <div className="contact-us-map" dangerouslySetInnerHTML={{ __html: map.value }} />

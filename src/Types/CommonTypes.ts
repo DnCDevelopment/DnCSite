@@ -38,7 +38,11 @@ export interface ITextBlock {
     value: string;
   };
   text: {
-    value: string;
+    value: {
+      internal: {
+        content: string;
+      };
+    };
   };
 }
 

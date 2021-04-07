@@ -39,7 +39,7 @@ const MainPageServices: React.FC = (): JSX.Element => {
   }: IMainPageServices = useStaticQuery(SERVICEQUERY);
   return (
     <div className="mainpage-services">
-      <h2 className="mainpage-services-header">{title}</h2>
+      <h2 className="mainpage-services-header">{title.value}</h2>
       <div className="mainpage-services-items">
         {services.length > 0 &&
           services.map(({ service: { id, serviceName, serviceSolutions } }, dataKey) => (
