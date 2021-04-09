@@ -5,10 +5,12 @@ import { IPool, IPoolData } from './CommonTypes';
 
 const POOL_QUERY = graphql`
   query PoolQuery {
-    data: allStrapiPool {
+    data: allCockpitPool {
       variants: nodes {
         id
-        title
+        title {
+          value
+        }
       }
     }
   }
@@ -27,10 +29,10 @@ const Pool: React.FC<IPool> = ({ poolChoice, changeChoice }): JSX.Element => {
         {variants.map(({ id, title }) => (
           <div
             key={`${id}_${title}`}
-            className={`pool-variants-item${poolChoice === title ? ' pool-variants-item-selected' : ''}`}
-            onClick={() => changeChoice(title)}
+            className={`pool-variants-item${poolChoice === title.value ? ' pool-variants-item-selected' : ''}`}
+            onClick={() => changeChoice(title.value)}
           >
-            {title}
+            {title.value}
           </div>
         ))}
       </div>

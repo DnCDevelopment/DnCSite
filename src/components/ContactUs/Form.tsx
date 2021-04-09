@@ -6,20 +6,32 @@ import Loader from '../../assets/animations/svg/loader.inline.svg';
 
 const FORM_QUERY = graphql`
   query FormQuery {
-    strapiContactform {
-      titile
-      blueTitle
-      namePlaceholder
-      telPlaceholder
-      mailPlaceholder
-      sendTitle
+    data: cockpitContactForm {
+      title {
+        value
+      }
+      blueTitle {
+        value
+      }
+      namePlaceholder {
+        value
+      }
+      telPlaceholder {
+        value
+      }
+      mailPlaceholder {
+        value
+      }
+      sendTitle {
+        value
+      }
     }
   }
 `;
 
 const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode }): JSX.Element => {
   const {
-    strapiContactform: { titile, blueTitle, namePlaceholder, telPlaceholder, mailPlaceholder, sendTitle },
+    data: { title, blueTitle, namePlaceholder, telPlaceholder, mailPlaceholder, sendTitle },
   }: IFormData = useStaticQuery(FORM_QUERY);
 
   const [name, changeName] = useState('');
@@ -68,9 +80,9 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
   return (
     <div className="contact-us-form">
       <h3 className="contact-us-header">
-        {titile}
+        {title.value}
         <br />
-        <span className="contact-us-header">{blueTitle}</span>
+        <span className="contact-us-header">{blueTitle.value}</span>
       </h3>
       <form>
         <div className={`contact-us-form-input${errFields.includes(name) ? ' contact-us-form-input-error' : ''}`}>
@@ -78,7 +90,7 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
             className="contact-us-form-input-field"
             type="text"
             name="name"
-            placeholder={namePlaceholder}
+            placeholder={namePlaceholder.value}
             value={name}
             onChange={({ target: { value } }) => {
               changeName(value);
@@ -90,7 +102,7 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
             className="contact-us-form-input-field"
             type="tel"
             name="tel"
-            placeholder={telPlaceholder}
+            placeholder={telPlaceholder.value}
             value={tel}
             onChange={({ target: { value } }) => {
               changeTel(value);
@@ -102,7 +114,7 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
             className="contact-us-form-input-field"
             type="email"
             name="mail"
-            placeholder={mailPlaceholder}
+            placeholder={mailPlaceholder.value}
             value={mail}
             onChange={({ target: { value } }) => {
               changeMail(value);
@@ -112,7 +124,7 @@ const Form: React.FC<IForm> = ({ poolChoice, changeSended, changeResponseCode })
         {loader ? (
           <Loader className="contact-us-form-loader" />
         ) : (
-          <input type="submit" className="contact-us-form-submit" onClick={handleSubmit} value={sendTitle} />
+          <input type="submit" className="contact-us-form-submit" onClick={handleSubmit} value={sendTitle.value} />
         )}
       </form>
     </div>

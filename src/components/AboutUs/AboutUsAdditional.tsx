@@ -7,11 +7,19 @@ import './AboutUsAdditional.scss';
 
 const ABOUT_US_TEXT_QUERY = graphql`
   query AboutTextBlocksQuery {
-    data: allStrapiAbouttextblock {
+    data: allCockpitAboutTextBlocks {
       textBlocks: nodes {
         id
-        title
-        text
+        title {
+          value
+        }
+        text {
+          value {
+            internal {
+              content
+            }
+          }
+        }
       }
     }
   }
@@ -25,8 +33,8 @@ const AboutUsAdditional: React.FC = (): JSX.Element => {
     <div className="about-text">
       {textBlocks.map(({ id, title, text }) => (
         <div key={`${id}_${title}`} className="about-text-block">
-          <h3 className="about-text-block-header">{title}</h3>
-          <p className="about-text-block-text" dangerouslySetInnerHTML={{ __html: text }} />
+          <h3 className="about-text-block-header">{title.value}</h3>
+          <p className="about-text-block-text" dangerouslySetInnerHTML={{ __html: text.value.internal.content }} />
         </div>
       ))}
       <nextBlock.Consumer>{({ event }) => <Arrow event={event} />}</nextBlock.Consumer>

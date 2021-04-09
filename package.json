@@ -16,7 +16,7 @@
     "deploy-prod": "rm -rf .cache public node-modules && npm i && gatsby build && firebase deploy",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "start": "npm run dev",
     "test": "npm run type-check && npm run lint",
     "type-check": "tsc"
@@ -31,6 +31,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@fika/gatsby-source-cockpit": "^1.1.2",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "firebase": "^7.13.2",
@@ -41,9 +42,9 @@
     "gatsby-plugin-canonical-urls": "^2.2.1",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-google-analytics": "^2.2.2",
+    "gatsby-plugin-google-fonts-v2": "0.0.6",
     "gatsby-plugin-layout": "^1.2.1",
     "gatsby-plugin-manifest": "^2.3.2",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.0",
@@ -53,7 +54,6 @@
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-remark-custom-blocks": "^2.2.1",
     "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-source-strapi": "0.0.10",
     "gatsby-transformer-remark": "^2.7.1",
     "gatsby-transformer-sharp": "^2.4.2",
     "lottie-web": "^5.6.7",

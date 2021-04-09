@@ -5,20 +5,29 @@ import Banner from '../components/Banner/Banner';
 import ServiceBlock from '../components/ServiceBlock/ServiceBlock';
 import ContactUs from '../components/ContactUs/ContactUs';
 import nextBlock from '../components/Controls/nextBlockContext';
-import { IScrollCallbackArgs } from '../Types/CommonTypes';
+import { IScrollCallbackArgs, ISEOQuery } from '../Types/CommonTypes';
 import SEO from '../components/SEO/SEO';
 
 const COMPONENTS = [<Banner title="Услуги" anchor="#Services" />, <ServiceBlock />, <ContactUs />];
 
 const SERVICES_SEO = graphql`
   query ServicesSeo {
-    strapiSeos(strapiId: { eq: 3 }) {
-      title
-      description
-      lang
-      path
-      date
-      keywords
+    cockpitSeos {
+      title {
+        value
+      }
+      description {
+        value
+      }
+      lang {
+        value
+      }
+      path {
+        value
+      }
+      date {
+        value
+      }
     }
   }
 `;
@@ -26,7 +35,7 @@ const SERVICES_SEO = graphql`
 const IndexPage: React.FC = (): JSX.Element => {
   const [current, setCurrent] = useState(0);
   const {
-    strapiSeos: { title, description, lang, path, date, keywords },
+    cockpitSeos: { title, description, lang, path, date, keywords },
   }: ISEOQuery = useStaticQuery(SERVICES_SEO);
   const options = {
     activeClass: 'current',
@@ -47,7 +56,14 @@ const IndexPage: React.FC = (): JSX.Element => {
   }, []);
   return (
     <>
-      <SEO descriptionProp={description} lang={lang} titleProp={title} path={path} date={date} keywords={keywords} />
+      <SEO
+        descriptionProp={description.value}
+        lang={lang.value}
+        titleProp={title.value}
+        path={path.value}
+        date={date.value}
+        keywords={keywords?.value}
+      />
       <nextBlock.Provider value={{ event: () => setCurrent(current + 1) }}>
         <SectionsContainer {...options} activeSection={current}>
           {/* eslint-disable */}

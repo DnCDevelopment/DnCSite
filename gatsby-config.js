@@ -42,37 +42,12 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-strapi',
+      resolve: '@fika/gatsby-source-cockpit',
       options: {
-        apiURL: 'http://46.101.116.184:1337',
-        queryLimit: 1000,
-        contentTypes: [
-          'adressdata',
-          'menu',
-          'socialicon',
-          'settings',
-          'aboutus',
-          'clients',
-          'seos',
-          'abouttextblock',
-          'mainpageservices',
-          'mainpageportfolio',
-          'pool',
-          'portfolio',
-          'portfoliotypes',
-          'services',
-          'servicesolutions',
-          'contacts',
-          'contactsblock',
-          'contactsblock',
-          'contactform',
-          'technology',
-          'team',
-        ],
-        loginData: {
-          identifier: process.env.LOGIN,
-          password: process.env.PASSWORD,
-        },
+        token: process.env.COCKPIT_TOKEN,
+        baseUrl: process.env.COCKPIT_URL,
+        locales: [],
+        collections: [],
       },
     },
     {
@@ -132,21 +107,18 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-google-fonts-v2',
       options: {
         fonts: [
           {
             family: 'Roboto Condensed',
-            variants: ['200', '300', '400', '500', '600', '700', '800', '900'],
-            subsets: ['cyrillic'],
+            weights: ['200', '300', '400', '500', '600', '700', '800', '900'],
           },
           {
             family: 'Open Sans',
-            variants: ['200', '300', '400', '500', '600', '700', '800', '900'],
-            subsets: ['cyrillic'],
+            weights: ['200', '300', '400', '500', '600', '700', '800', '900'],
           },
         ],
-        formats: ['woff', 'woff2', 'ttf', 'eot'],
       },
     },
     {

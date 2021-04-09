@@ -3,26 +3,26 @@ import './ServiceSolutions.scss';
 import { IServiceWraped } from './CommonTypes';
 
 const ServiceSolutions: React.FC<IServiceWraped> = ({ service }): JSX.Element => {
-  const { serviceSolutions = [] } = service;
-  const [selected, toogleSelected] = useState();
+  const { serviceSolutions } = service;
+  const [selected, toogleSelected] = useState('');
   return (
     <>
-      {serviceSolutions.map(({ id, shortName, description, price }) => (
+      {serviceSolutions.value.map(({ id, shortName, description, price }) => (
         <div
           className={`service-block-solution${selected === id ? ' service-block-solution-selected' : ''}`}
           key={id}
           onClick={() => {
-            toogleSelected(id === selected ? '' : id);
+            toogleSelected((id as string) === selected ? '' : (id as string));
           }}
         >
-          <div className="service-block-solution-name">{shortName}</div>
+          <div className="service-block-solution-name">{shortName.value}</div>
           <div className="service-block-solution-description">
-            {description}
+            {description.value}
             {typeof price !== 'undefined' && price && (
               <>
                 <br />
                 <span className="service-block-solution-description-price">
-                  <a href="#ContactUs">{price}</a>
+                  <a href="#ContactUs">{price.value}</a>
                 </span>
               </>
             )}

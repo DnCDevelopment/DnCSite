@@ -9,29 +9,57 @@ export interface IImage {
 
 export interface IClient {
   id?: number | string;
-  clientName: string;
-  svg: string;
+  clientName: {
+    value: string;
+  };
+  svg: {
+    value: string;
+  };
 }
 export interface ITeammate {
   id?: number | string;
-  teammateName: string;
-  position: string;
-  descritpion: string;
-  picture: IImage;
+  teammateName: {
+    value: string;
+  };
+  position: {
+    value: string;
+  };
+  description: {
+    value: string;
+  };
+  picture: {
+    value: IImage;
+  };
 }
 
 export interface ITextBlock {
   id?: number | string;
-  title: string;
-  text: string;
+  title: {
+    value: string;
+  };
+  text: {
+    value: {
+      internal: {
+        content: string;
+      };
+    };
+  };
 }
 
 export interface IPortfolio {
   id?: number | string;
-  name?: string;
-  svg: string;
-  rgba: string;
-  link?: string | undefined;
+  name?: {
+    value: string;
+  };
+  svg: {
+    value: string;
+  };
+  rgba: {
+    value: string;
+  };
+  link?: {
+    value: string | undefined;
+  };
 }
 
 export interface IPortfolioCarousel {
@@ -47,30 +75,59 @@ export interface ILogo {
 
 export interface IServiceSolution {
   id: number | string;
-  solutionName: string;
-  shortName: string;
-  description: string;
-  service: number;
+  solutionName: {
+    value: string;
+  };
+  shortName: {
+    value: string;
+  };
+  description: {
+    value: string;
+  };
+  service: {
+    value: number;
+  };
+  price: {
+    value: string;
+  };
 }
 
 export interface IService {
   id?: number | string;
-  serviceName: string;
+  serviceName: {
+    value: string;
+  };
   svg?: string;
-  description?: string;
-  serviceSolutions: IServiceSolution[];
-  price?: string;
+  description?: {
+    value: string;
+  };
+  serviceSolutions: {
+    value: IServiceSolution[];
+  };
+  price?: {
+    value: string;
+  };
   dataKey: number;
 }
 
 export interface ITechnology {
   technology: {
     id: number | string;
-    name: string;
-    svg: string;
-    x: number;
-    y: number;
-    viewSize: string;
+    name: {
+      value: string;
+    };
+    svg: {
+      value: string;
+    };
+    x: {
+      value: number;
+    };
+    y: {
+      value: number;
+    };
+    viewSize: {
+      value: string;
+    };
   };
 }
 
@@ -80,18 +137,34 @@ export interface ITechnologiesData {
 
 export interface IMainAbout {
   aboutUs: {
-    title: string;
-    subtitle: string;
-    mainPageContent: string;
-    linkText: string;
-    link: string;
-    main_page_photo: IImage;
+    title: {
+      value: string;
+    };
+    subtitle: {
+      value: string;
+    };
+    mainPageContent: {
+      value: string;
+    };
+    linkText: {
+      value: string;
+    };
+    link: {
+      value: string;
+    };
+    mainPagePhoto: {
+      value: IImage;
+    };
   };
 }
 
 export interface IMenu {
-  link: string;
-  title: string;
+  link: {
+    value: string;
+  };
+  title: {
+    value: string;
+  };
 }
 
 export interface IMenuData {
@@ -101,8 +174,12 @@ export interface IMenuData {
 }
 
 export interface ISocialIcons {
-  icon: string;
-  link: string;
+  icon: {
+    value: string;
+  };
+  link: {
+    value: string;
+  };
 }
 
 export interface ISocialIconsData {
@@ -116,12 +193,24 @@ export interface IScrollCallbackArgs {
 }
 
 export interface ISEOQuery {
-  strapiSeos: {
-    title: string;
-    description: string;
-    lang: string;
-    path: string;
-    date: string;
-    keywords?: string;
+  cockpitSeos: {
+    title: {
+      value: string;
+    };
+    description: {
+      value: string;
+    };
+    lang: {
+      value: string;
+    };
+    path: {
+      value: string;
+    };
+    date: {
+      value: string;
+    };
+    keywords?: {
+      value: string;
+    };
   };
 }

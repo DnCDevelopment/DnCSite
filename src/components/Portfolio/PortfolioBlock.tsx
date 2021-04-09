@@ -10,15 +10,25 @@ import './PortfolioBlock.scss';
 
 const PORTFOLIO_QUERY = graphql`
   query portfolioQuery {
-    data: allStrapiPortfoliotypes {
+    data: allCockpitPortfolioTypes {
       types: nodes {
         id
-        name
+        name {
+          value
+        }
         portfolios {
-          id
-          name
-          svg
-          rgba
+          value {
+            id
+            name {
+              value
+            }
+            svg {
+              value
+            }
+            rgba {
+              value
+            }
+          }
         }
       }
     }
@@ -55,7 +65,7 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
     <div className="portfolio-block">
       <h2 className="portfolio-block-header">portfolio</h2>
       <WorksTypeSelect types={types} currentType={currentType} changeType={changeType} />
-      {visiblePortfolios.length > 0 && (
+      {visiblePortfolios.value.length > 0 && (
         <Carousel
           responsive={responsive}
           customButtonGroup={<CarouselButtonGroup />}
@@ -69,8 +79,10 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
           {/* Повторяется пушо там надо минимум 6 елементов вроде что бы работало на десктопах */}
           {/* Тут начало */}
           {window.innerWidth < 1024
-            ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
-            : visiblePortfolios
+            ? visiblePortfolios.value.map(({ id, name, rgba, svg }) => (
+                <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
+              ))
+            : visiblePortfolios.value
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
                 .map(el => (
                   <div className="carousel-column">
@@ -81,8 +93,10 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
                 ))}
           {/* Тут конец который ты должен пососать */}
           {window.innerWidth < 1024
-            ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
-            : visiblePortfolios
+            ? visiblePortfolios.value.map(({ id, name, rgba, svg }) => (
+                <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
+              ))
+            : visiblePortfolios.value
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
                 .map(el => (
                   <div className="carousel-column">
@@ -92,8 +106,10 @@ const PortfolioBlock: React.FC = (): JSX.Element => {
                   </div>
                 ))}
           {window.innerWidth < 1024
-            ? visiblePortfolios.map(({ id, name, rgba, svg }) => <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />)
-            : visiblePortfolios
+            ? visiblePortfolios.value.map(({ id, name, rgba, svg }) => (
+                <PortfolioCarouselItem key={`${id}_${name}`} svg={svg} rgba={rgba} />
+              ))
+            : visiblePortfolios.value
                 .map((el, idx, arr) => (idx !== arr.length - 1 ? arr.slice(idx, idx + 2) : [el, arr[0]]))
                 .map(el => (
                   <div className="carousel-column">

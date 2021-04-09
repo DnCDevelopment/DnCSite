@@ -9,13 +9,21 @@ import './PortfolioBlockTemp.scss';
 
 const PORTFOLIO_QUERY_TEMP = graphql`
   query portfolioQueryTemp {
-    data: allStrapiPortfolio {
+    data: allCockpitPortfolio {
       portfolioItems: nodes {
         id
-        name
-        svg
-        rgba
-        link
+        name {
+          value
+        }
+        rgba {
+          value
+        }
+        link {
+          value
+        }
+        svg {
+          value
+        }
       }
     }
   }

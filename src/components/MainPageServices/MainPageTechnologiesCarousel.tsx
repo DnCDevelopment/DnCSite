@@ -14,7 +14,7 @@ const MainPageTechnologiesCarousel: React.FC<ITechnologiesData> = ({ technologie
   return (
     <Carousel responsive={responsive} customButtonGroup={<CarouselButtonGroup />}>
       {technologies.map(({ technology: { id, svg } }) => (
-        <div key={id} className="techologies-item" dangerouslySetInnerHTML={{ __html: svg }} />
+        <div key={id} className="techologies-item" dangerouslySetInnerHTML={{ __html: svg.value }} />
       ))}
     </Carousel>
   );

@@ -17,6 +17,6 @@ export interface ISEO {
   image?: string;
   date: string;
   canonicalUrl?: string;
-  noindex: bool;
+  noindex?: boolean;
   keywords?: string;
 }

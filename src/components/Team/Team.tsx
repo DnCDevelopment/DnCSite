@@ -10,19 +10,24 @@ import './Team.scss';
 
 const TEAM_QUERY = graphql`
   query TeamQuery {
-    data: allStrapiTeam {
+    data: allCockpitTeams {
       team: nodes {
         id
-        teammateName: name
-        position
-        description
+        teammateName {
+          value
+        }
+        position {
+          value
+        }
         picture {
-          childImageSharp {
-            fluid {
-              src
+          value {
+            childImageSharp {
+              fluid {
+                src
+              }
             }
+            name
           }
-          name
         }
       }
     }
@@ -58,7 +63,7 @@ const Team: React.FC = (): JSX.Element => {
             key={`${id}_${teammateName}`}
             teammateName={teammateName}
             position={position}
-            descritpion={description}
+            description={description}
             picture={picture}
           />
         ))}

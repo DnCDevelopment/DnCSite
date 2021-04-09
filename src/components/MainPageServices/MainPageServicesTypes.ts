@@ -1,16 +1,18 @@
 import { IService, ITechnology } from '../../Types/CommonTypes';
 
 export interface IMainPageServices {
-  allStrapiServices: {
+  allCockpitServices: {
     services: { service: IService }[];
   };
   block: {
-    title: string;
+    title: {
+      value: string;
+    };
   };
 }
 
 export interface IMainPageTechologies {
-  allStrapiTechnology: { technologies: { technology: ITechnology[] } };
+  data: { technologies: { technology: ITechnology[] } };
 }
 
 export interface INukaControls {
